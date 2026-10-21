@@ -1,0 +1,61 @@
+# ─────────────────────────────────────────────────────────────
+#  LE ROYAUME DES MOTS ENCHANTÉS — déploiement Netlify
+#  Site 100 % statique : aucune étape de build.
+# ─────────────────────────────────────────────────────────────
+
+[build]
+  publish = "."
+  command = ""
+
+[build.processing]
+  skip_processing = false
+
+# ── Mise en cache longue des médias (ils ne changent pas) ───
+#  Attention : le Content-Type doit être donné par extension.
+#  Une règle "/assets/*" globale forcerait application/pdf sur
+#  la vidéo et les images, qui seraient alors illisibles.
+[[headers]]
+  for = "/assets/*.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "application/pdf"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/*.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "video/mp4"
+    Accept-Ranges = "bytes"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "image/jpeg"
+    X-Content-Type-Options = "nosniff"
+
+# ── Fichiers de l'application : toujours servis à jour ──────
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# ── Page de secours (non utilisée : la navigation est par ancre) ──
+[[redirects]]
+  from = "/accueil"
+  to = "/index.html"
+  status = 200

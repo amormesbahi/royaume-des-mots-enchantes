@@ -1,0 +1,13 @@
+# Le projet est en LF (fichiers web) : on fige la convention.
+* text=auto eol=lf
+
+# Médias et documents binaires : jamais convertis
+*.mp4 binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.doc binary
+*.docx binary

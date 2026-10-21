@@ -1,0 +1,20 @@
+# --- fichiers système / éditeurs -----------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# --- fichiers temporaires -------------------------------------------------
+*.tmp
+*.bak
+*.log
+~$*
+
+# --- Node (si des outils sont ajoutés plus tard) --------------------------
+node_modules/
+npm-debug.log*
+
+# --- Netlify ---------------------------------------------------------------
+.netlify/
