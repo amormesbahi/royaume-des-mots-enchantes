@@ -28,12 +28,51 @@ l'en-tête officiel et les lignes de signature.
 
 ---
 
+## 📦 Dépôt GitHub
+
+Le site est versionné sur GitHub : **<https://github.com/amormesbahi/royaume-des-mots-enchantes>**
+
+* dépôt **public**, branche par défaut **`main`**, historique complet ;
+* aucun build : le dépôt *est* le site (Netlify le publie tel quel) ;
+* les PDF et la vidéo sont versionnés ici (34,9 Mo) — ils sont servis **à la demande**,
+  jamais au démarrage.
+
+### Pousser une modification
+
+```powershell
+git status                     # ce qui a changé
+git add -A                     # indexer
+git commit -m "message"        # enregistrer
+git push                       # envoyer sur GitHub
+```
+
+> ⚠️ **Le réseau de l'établissement est très lent (~60 Ko/s)** : un `push` complet des
+> 34,9 Mo prend **≈ 8 à 10 minutes**. Les modifications suivantes (texte, code) ne
+> pèsent que quelques kilo-octets et partent en quelques secondes.
+
+> 🔐 **Authentification** : le dépôt utilise un jeton personnel. Pour le régénérer :
+> GitHub → *Settings* → *Developer settings* → *Personal access tokens* → *Fine-grained tokens*.
+> Il faut les droits **Contents : Read and write** sur ce dépôt.
+
+### Consulter l'historique
+
+| Commande | Effet |
+|---|---|
+| `git log --oneline` | la liste des commits |
+| `git show --stat HEAD` | le contenu du dernier commit |
+| `git status -sb` | l'état du dossier (`## main...origin/main` = à jour) |
+| `git diff` | les modifications non enregistrées |
+
+---
+
 ## 📁 Arborescence
 
 ```
 annuelle/
 ├─ index.html            page unique (structure SPA)
 ├─ netlify.toml          configuration de déploiement
+├─ .gitattributes        fins de ligne LF figées (PDF, Word, images)
+├─ .gitignore            fichiers exclus du dépôt
 ├─ css/
 │  └─ style.css          thème « nuit enchantée », 3 décors SVG, écran vidéo,
 │                        orbes centrés · verre liquide · glitters · cahier journal
@@ -75,10 +114,11 @@ et les rendrait illisibles.
 2. Glisser-déposer **le dossier `annuelle`** entier.
 3. Le site est en ligne immédiatement sur `https://<nom>.netlify.app`.
 
-### Par dépôt Git
+### Par dépôt Git (recommandé : redéploiement automatique)
 
-1. `netlify init` dans le dossier (ou **Add new site → Import an existing project**).
-2. Les réglages du dépôt sont déjà dans `netlify.toml` :
+1. Sur <https://app.netlify.com> → **Add new site** → **Import an existing project**.
+2. Choisir le dépôt **`royaume-des-mots-enchantes`** (compte `amormesbahi`).
+3. Les réglages sont déjà dans `netlify.toml` :
    * `publish = "."` (pas de build),
    * cache 1 an sur `/assets/*.pdf`, `/assets/*.mp4`, `/assets/*.jpg`, avec le bon `Content-Type`
      pour chaque type (`application/pdf`, `video/mp4`, `image/jpeg`) et `Accept-Ranges` sur la vidéo,
