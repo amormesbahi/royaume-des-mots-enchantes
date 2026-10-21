@@ -112,26 +112,31 @@ et les rendrait illisibles.
 
 | Hébergeur | Adresse | État |
 |---|---|---|
+| **Netlify** | <https://royaume-des-mots-enchantes.netlify.app> | ✅ actif, redéployé à chaque `push` sur `main` |
 | **GitHub Pages** | <https://amormesbahi.github.io/royaume-des-mots-enchantes/> | ✅ actif, redéployé à chaque `push` |
-| Netlify | *à configurer* | https://<nom>.netlify.app |
 
-> GitHub Pages sert le dépôt **tel quel**, sans build : le `push` de `main` suffit.
+> Les deux adresses servent **le même dépôt, sans build** : un `push` sur `main` met à jour
+> GitHub Pages *et* Netlify. L'administration du projet Netlify :
+> <https://app.netlify.com/projects/royaume-des-mots-enchantes>
 
-### Par glisser-déposer (le plus rapide)
+**Réglages appliqués sur Netlify** (dépôt lié, branche de production `main`) :
 
-1. Ouvrir <https://app.netlify.com/drop>.
-2. Glisser-déposer **le dossier `annuelle`** entier.
-3. Le site est en ligne immédiatement sur `https://<nom>.netlify.app`.
+| Réglage | Valeur |
+|---|---|
+| Branche de production | `main` |
+| Dossier de publication | `.` (le dépôt *est* le site) |
+| Commande de build | aucune |
+| Cache `/assets/*.pdf` | 1 an, `Content-Type: application/pdf` |
+| Cache `/assets/*.mp4` | 1 an, `Content-Type: video/mp4`, `Accept-Ranges: bytes` |
+| Cache `/assets/*.jpg` | 1 an, `Content-Type: image/jpeg` |
+| Cache `/css/*` et `/js/*` | 7 jours |
+| Cache `/*.html` | `no-cache` (revalidation à chaque visite) |
+| Redirection | `/accueil` → `/index.html` (les autres routes utilisent des ancres `#/…`) |
 
-### Par dépôt Git (recommandé : redéploiement automatique)
-
-1. Sur <https://app.netlify.com> → **Add new site** → **Import an existing project**.
-2. Choisir le dépôt **`royaume-des-mots-enchantes`** (compte `amormesbahi`).
-3. Les réglages sont déjà dans `netlify.toml` :
-   * `publish = "."` (pas de build),
-   * cache 1 an sur `/assets/*.pdf`, `/assets/*.mp4`, `/assets/*.jpg`, avec le bon `Content-Type`
-     pour chaque type (`application/pdf`, `video/mp4`, `image/jpeg`) et `Accept-Ranges` sur la vidéo,
-   * pas de redirection (la navigation utilise des ancres `#/…`).
+> ⚠️ **Pour que Netlify lise `netlify.toml`**, le dépôt doit être lié **depuis l'interface**
+> (Developer settings → Manage repository → Link to a different repository), et l'application
+> GitHub Netlify doit être autorisée sur le dépôt. Une liaison faite uniquement par API
+> fonctionne pour la publication, mais le build automatique échoue alors au clonage du dépôt.
 
 ### Fichiers retirés du dossier (doublons de la source)
 
