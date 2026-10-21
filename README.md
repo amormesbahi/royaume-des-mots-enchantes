@@ -108,6 +108,15 @@ et les rendrait illisibles.
 
 ## 🚀 Déployer sur Netlify (netlify.app)
 
+### 🌐 Le site est déjà en ligne
+
+| Hébergeur | Adresse | État |
+|---|---|---|
+| **GitHub Pages** | <https://amormesbahi.github.io/royaume-des-mots-enchantes/> | ✅ actif, redéployé à chaque `push` |
+| Netlify | *à configurer* | https://<nom>.netlify.app |
+
+> GitHub Pages sert le dépôt **tel quel**, sans build : le `push` de `main` suffit.
+
 ### Par glisser-déposer (le plus rapide)
 
 1. Ouvrir <https://app.netlify.com/drop>.
