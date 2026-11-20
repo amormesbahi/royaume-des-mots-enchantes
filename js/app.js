@@ -510,8 +510,8 @@
       '</div>' +
       '<h1>Le Royaume des Mots Enchantés</h1>' +
       '<p class="chapo">Un parcours de français en trois royaumes : le <b>conte</b>, la <b>fable</b> et la <b>légende</b>. ' +
-      'Sept séquences, vingt-cinq semaines de cours, cent séances — précédées en septembre d\'une semaine ' +
-      'd\'évaluation et de remédiation, puis les révisions et les examens du dernier trimestre — ' +
+      'Sept séquences, vingt-huit semaines de cours, cent trois séances — précédées en octobre d\'une semaine ' +
+      'd\'évaluation diagnostique, rythmées par trois devoirs surveillés et les compositions — ' +
       'et deux orbes magiques à chaque séance pour ouvrir ' +
       'la fiche pédagogique et la page du manuel.</p>' +
       '<div class="actions">' +
@@ -892,8 +892,8 @@
       return '<div class="chrono-item">' +
         '<div class="chrono-pastille" aria-hidden="true">' + (rentree ? 'R' : s.n) + '</div>' +
         '<div class="chrono-carte verre">' +
-        '<div class="chrono-tete"><h2>' + s.mois + (rentree ? ' — évaluation et remédiation' : ' · séquence ' + sq.num) + '</h2>' +
-        '<span class="mois">' + (rentree ? 'Accueil des élèves · dernière semaine de septembre' : th.genre) + '</span>' +
+        '<div class="chrono-tete"><h2>' + s.mois + (rentree ? ' — mise en place et évaluation diagnostique' : ' · séquence ' + sq.num) + '</h2>' +
+        '<span class="mois">' + (rentree ? 'Accueil des élèves · semaine du 4 au 8 octobre 2026' : th.genre) + '</span>' +
         (s.note && !rentree ? '<span class="puce verte">' + s.note + '</span>' : '') +
         '<a class="btn petit" style="margin-left:auto" href="#/semaine/' + s.n + '">Voir la semaine</a></div>' +
         '<div class="chrono-seances">' +
@@ -911,15 +911,14 @@
       '<nav class="fil" aria-label="Fil d’Ariane"><a href="#/">Accueil</a><span class="sep">›</span><span class="ici">Chronologie</span></nav>' +
       '<h1 class="titre-vue"><span class="surtitre">Année scolaire ' + META.annee + '</span>Chronologie des ' + nbsem + ' semaines</h1>' +
       '<p class="lede">Vue d\'ensemble de l\'année : 4 séances par semaine (3 classiques + 1 TD), les vacances, ' +
-      'les devoirs surveillés (semaines 7, 16 et 23-24) et les examens officiels du CEM ' +
-      '(semaine 9 — trimestre 1, semaine 18 — trimestre 2, semaine 27 — trimestre 3).</p>' +
+      'les devoirs surveillés (semaines 5, 17 et 25) et les compositions officielles du CEM ' +
+      '(semaine 9 — trimestre 1, semaine 19 — trimestre 2, semaine 28 — trimestre 3).</p>' +
       '<div class="puces" style="margin-top:18px">' +
-      '<span class="puce or">Semaines 1–11 · projet 1</span>' +
-      '<span class="puce marine">Semaines 12–19 · projet 2</span>' +
-      '<span class="puce violette">Semaines 20–25 · projet 3</span>' +
-      '<span class="puce bleue">Semaines 26–27 · révisions et examens</span>' +
-      '<span class="puce verte">Devoirs : sem. 7, 16, 23-24</span>' +
-      '<span class="puce rose">Examens : sem. 9, 18, 27</span></div>' +
+      '<span class="puce or">Semaines 0–12 · projet 1</span>' +
+      '<span class="puce marine">Semaines 13–20 · projet 2</span>' +
+      '<span class="puce violette">Semaines 21–29 · projet 3</span>' +
+      '<span class="puce verte">Devoirs : sem. 5, 17, 25</span>' +
+      '<span class="puce rose">Compositions : sem. 9, 19, 28</span></div>' +
       '<p style="margin:14px 0 0"><a class="btn petit" href="#/calendrier">Calendrier officiel des devoirs et examens ▸</a>' +
       ' <a class="btn petit" href="#/repartition">🖨️ Répartition à imprimer ▸</a></p>' +
       '<div class="chrono" style="margin-top:22px">' + items + '</div>' +
@@ -1004,8 +1003,8 @@
           vac: false, sem: s, mois: s.mois,
           projetKey: 'R', seqKey: 'R',
           projet: 'Accueil de la classe',
-          seqLib: 'Semaine de rentrée — évaluation et remédiation',
-          genre: 'Dernière semaine de septembre',
+          seqLib: 'Mise en place — évaluation diagnostique',
+          genre: 'Semaine du 4 au 8 octobre 2026',
           contenu: lignesSemaine(s),
           eval: evalSemaine(s)
         });
@@ -1053,7 +1052,7 @@
     const titreBloc = (b) => {
       const sem = b.rangs.filter((r) => !r.vac).map((r) => r.sem.n);
       if (sem.length === 1 && sem[0] === 0) {
-        return '🗓 Septembre — semaine de rentrée · Évaluation et remédiation';
+        return '🗓 Octobre — mise en place · évaluation diagnostique';
       }
       const plage = sem.length > 1 ? sem[0] + '–' + sem[sem.length - 1] : String(sem[0]);
       const projs = [], seqs = [];
@@ -1374,9 +1373,9 @@
       SEMAINES.filter((v) => v.vacances).map((v) =>
         '<li><b>' + v.nom + '</b> : du ' + v.du + ' au ' + v.au +
         ' (après la semaine ' + v.apres + ').</li>').join('') +
-      '<li><b>Devoirs surveillés</b> : semaines 7 (mi-nov.), 16 (février) et 23-24 (3e trimestre).</li>' +
-      '<li><b>Examens officiels du CEM</b> : <a href="#/calendrier">semaine 9 (T1, 6-10 déc.), semaine 18 (T2, 2-8 mars) et semaine 27 (T3, 23-27 mai)</a>.</li>' +
-      '<li><b>Fin de l\'année</b> : examens du 3e trimestre du 23 au 27 mai 2027.</li>' +
+      '<li><b>Devoirs surveillés</b> : semaine 5 (8-12 nov. 2026), semaine 17 (14-18 févr. 2027) et semaine 25 (2-6 mai 2027).</li>' +
+      '<li><b>Compositions officielles du CEM</b> : <a href="#/calendrier">semaine 9 (T1, 6-10 déc.), semaine 19 (T2, 2-8 mars) et semaine 28 (T3, 23-27 mai)</a>.</li>' +
+      '<li><b>Fin de l\'année</b> : clôture des cours le jeudi 3 juin 2027.</li>' +
       '</ul>' +
       '<div class="encart"><a class="btn petit" href="#/calendrier">📅 Calendrier officiel des devoirs et examens</a> — ' +
       'détail des trois trimestres (4AM / BEM blanc : devoirs mi-avril, examens du 9 au 11 mai 2027). ' +

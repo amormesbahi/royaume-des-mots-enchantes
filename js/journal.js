@@ -171,7 +171,7 @@
 
   /* Nom de la période de vacances qui contient la date (27 oct. 2026 est le
      premier jour des vacances d’automne), ou null. Les vacances coupent la
-     semaine 4 (25 oct.) et les derniers jours des semaines 10 et 20.       */
+     semaine 3 (25 oct.) et les derniers jours des semaines 10 et 20.       */
   function vacanceDe(d) {
     for (let i = 0; i < VACANCES.length; i++) {
       if (d >= VACANCES[i].du && d < VACANCES[i].au) return VACANCES[i].nom;
@@ -179,7 +179,7 @@
     return null;
   }
 
-  const FIN_COURS = parseDateFR(META.finCours) || new Date(2027, 4, 27);
+  const FIN_COURS = parseDateFR(META.finCours) || new Date(2027, 5, 3);
 
   function fmtDate(d) {
     if (!d) return '—';
@@ -206,67 +206,23 @@
   }
 
   /* -------------------------------------------------------------------
-     DATES DES 27 SEMAINES
+     DATES DES 30 SEMAINES
 
-     La répartition annuelle groupe les semaines par mois. Le calendrier
-     2026-2027 comprend trois périodes de vacances : automne (27 oct. →
-     2 nov. 2026, reprise le lundi 2 nov.), hiver (17 déc. → 3 janv.)
-     et printemps (18 mars → 4 avr.). L’année s’achève avec les examens
-     du 3e trimestre (23-27 mai 2027), donc le dernier dimanche utile
-     est le 23 mai 2027.
-
-     On attribue les dimanches **du dernier au premier**, en donnant la
-     préférence au mois indiqué par la répartition, tout en garantissant
-     qu’il reste assez de dimanches pour les semaines précédentes et qu'
-     aucune séance ne dépasse la fin de l’année. Avec les vacances d’automne
-     et les libellés de mois ajustés (janvier 4, février 3, mars 3, avril 3, mai 4),
-     les 28 semaines (1 de rentrée — évaluation et remédiation, 25 de cours +
-     révisions et examens) tombent
-     **exactement** dans le mois de la répartition, du dim. 27 sept. 2026
-     au dim. 23 mai 2027.                                              */
+     Les dates ne sont plus calculees : elles viennent de la repartition
+     annuelle RECTIFIEE (docx de novembre 2026). Chaque semaine porte son
+     dimanche de depart dans le champ `du` (rentrée le dim. 4 oct. 2026,
+     evaluation diagnostique ; 3 devoirs surveilles les sem. 5, 17, 25 ;
+     compositions T1/T2/T3 aux sem. 9, 19, 28 ; fin des cours le 3 juin).
+     La reprise de janvier est le dimanche 3 janvier 2027, celle d'avril
+     le dimanche 4 avril 2027 ; la semaine du 2-5 nov. porte le dimanche
+     1er nov. (en vacances : le journal le signale automatiquement).   */
   let cacheDimanches = null;
 
   function dimanchesDesSemaines() {
     if (cacheDimanches) return cacheDimanches;
-
     const semaines = SEMAINES.filter((s) => !s.vacances);
-    const annee = Number(String(META.annee).split('-')[0]) || 2026;
-
-    /* dernier dimanche dont les séances (jusqu’au jeudi) tiennent avant la
-       fin de l’année : 27 mai 2027 (jeudi) → dimanche 23 mai 2027       */
-    const limite = new Date(FIN_COURS);
-    limite.setDate(limite.getDate() - 4);
-    const cap = new Date(limite);
-    cap.setDate(cap.getDate() - cap.getDay());
-
-    /* tous les dimanches scolaires, vacances exclues */
-    let d = new Date(annee, 8, 1);
-    while (d.getDay() !== 0) d.setDate(d.getDate() + 1);
-    let dispo = [];
-    while (d <= cap) {
-      if (!enVacances(d)) dispo.push(new Date(d));
-      d.setDate(d.getDate() + 7);
-    }
-
-    const res = new Array(semaines.length);
-    for (let i = semaines.length - 1; i >= 0; i--) {
-      const suivant = i + 1 < res.length ? res[i + 1].getTime() : Infinity;
-      const candidats = dispo.filter((x) => x.getTime() < suivant);
-      /* il faut encore loger les i semaines précédentes : seuls les
-         dimanches d’indice ≥ i sont utilisables                        */
-      const faisables = candidats.slice(i);
-      const base = faisables.length ? faisables : candidats;
-      if (!base.length) { res[i] = null; continue; }
-      const propres = base.filter(
-        (x) => MOIS_LONGS[x.getMonth()].toLowerCase() === semaines[i].mois.toLowerCase()
-      );
-      const choisi = (propres.length ? propres : base)[(propres.length ? propres : base).length - 1];
-      res[i] = choisi;
-      dispo = dispo.filter((x) => x.getTime() < choisi.getTime());
-    }
-
-    cacheDimanches = res;
-    return res;
+    cacheDimanches = semaines.map((s) => parseDateFR(s.du));
+    return cacheDimanches;
   }
 
   /* ====================================================== EMPLOI DU TEMPS = */

@@ -5,7 +5,8 @@ Site statique (HTML + CSS + JavaScript, **aucun build**) du parcours de françai
 
 Une **vidéo de fond** (`assets/3porte.mp4`) ouvre le site, sans portes dessinées :
 les trois royaumes (conte, fable, légende) s'y choisissent par de grands boutons de texte
-→ 3 projets / 7 séquences / 28 semaines (1 de rentrée — évaluation et remédiation —, 25 de cours + révisions et examens) / 112 séances.
+→ 3 projets / 7 séquences / 30 semaines (1 de rentrée — évaluation diagnostique —, 29 de cours
+avec devoirs surveillés, compositions et révisions) / 103 séances.
 
 Trois **orbes magiques interactifs, toujours centrés** sous le texte, ouvrent par séance
 les documents officiels **dans le site** (lecteur PDF intégré). Ils sont habillés d'un effet
@@ -16,7 +17,7 @@ progression annuelle du ministère — sujet de production écrite (manuel 2AM, 
 devoir surveillé, préparation orale et lecture à la maison.
 
 Un **cahier journal auto-rempli** (`#/cahier-journal`) reconstruit les semaines de l'année
-(25 de cours + révisions et examens) à partir de l'**emploi du temps** : horaires, séances de
+(29 de cours, devoirs et compositions) à partir de l'**emploi du temps** : horaires, séances de
 chaque classe (2AM5, 2AM6, 2AM7), thèmes, objectifs et support de la leçon — imprimable et
 téléchargeable en `.doc`.
 
@@ -173,9 +174,9 @@ npx serve .          # ou : python -m http.server 8000
 | `#/` | Accueil : la **vidéo de fond** + les 3 royaumes en grands boutons + chiffres clés |
 | `#/theme/1` `#/theme/2` `#/theme/3` | Arbre des séquences d'un thème (conte / fable / légende) |
 | `#/sequence/1` … `#/sequence/7` | Détail d'une séquence + ses séances + ses **4 devoirs officiels** |
-| `#/semaine/1` … `#/semaine/27` | Les 4 séances d'une semaine |
+| `#/semaine/0` … `#/semaine/29` | Les séances d'une semaine (0 = rentrée, évaluation diagnostique) |
 | `#/seance/<semaine>/<0-3>` | Fiche résumée + la **console des trois orbes** |
-| `#/chrono` | Chronologie des 28 semaines (rentrée, vacances, devoirs, examens officiels) |
+| `#/chrono` | Chronologie des 30 semaines (rentrée, vacances, devoirs, compositions officielles) |
 | `#/calendrier` | **Calendrier officiel** des devoirs et des examens (3 trimestres, dates du CEM) |
 | `#/repartition` | **Répartition annuelle à imprimer / à télécharger en Word** (établissement, professeur, classes) |
 | `#/jeux` | Les 7 TD du cahier (21 activités illustrées) |
@@ -298,30 +299,30 @@ dossier (`emploi du temps/emploi.doc`) et des **séquences** de `js/data.js`.
 ### Ce qu'elle contient
 
 * **En-tête** : année scolaire, classe choisie, professeur, volume horaire
-  (4 séances/semaine = 3 classiques + 1 TD), fin de l'année (27 mai 2027, examens T3), période couverte.
+  (4 séances/semaine = 3 classiques + 1 TD), fin de l'année (3 juin 2027), période couverte.
 * **Emploi du temps de la classe** : grille 7 créneaux × 5 jours, avec la légende
   (séance de la classe / séance d'une autre classe / créneau libre).
 * **Progression par projets** : les 3 projets officiels, leur durée et leurs séquences.
 * **Le tableau du cahier journal** : 6 colonnes — Séances · Thèmes et objectifs · Dates ·
-  Horaires · Classes · Évaluations. 27 blocs « Semaine N — du dim. … au jeu. … », chacun
-  avec ses 4 séances datées et horairées.
+  Horaires · Classes · Évaluations. 29 blocs « Semaine N — du dim. … au jeu. … », chacun
+  avec ses séances datées et horairées.
 
-### Les dates : calculées, jamais écrites en dur
+### Les dates : portées par la répartition rectifiée
 
 * Les trois périodes de vacances viennent de `SEMAINES` (`vacances: 'automne' | 'hiver' | 'printemps'`,
   période `du ≤ dim < au`) : automne **du 27 oct. au 2 nov. 2026** (reprise le **lundi 2 nov.**),
   hiver (17 déc. – 3 janv.), printemps (18 mars – 4 avr.).
-* Chaque semaine scolaire reçoit son **dimanche de départ** : on parcourt les dimanches
-  scolaires depuis le 1<sup>er</sup> septembre de l'année, en attribuant **du dernier au premier**
-  et en préférant le mois de la répartition (avec garde-fou pour qu'il reste assez de
-  dimanches pour les semaines précédentes).
-* Avec les vacances d'automne et les libellés de mois ajustés (janvier 4, février 3,
-  mars 3, avril 3, mai 4), les **27 semaines de cours et la semaine 0 de rentrée tombent
-  exactement dans le mois de la répartition** (semaine 0 = dernière semaine de septembre :
-  **évaluation et remédiation**, dim. 27 sept. 2026), du **dim. 27 sept. 2026** au
-  **dim. 23 mai 2027** — toutes les dates restent **≤ 27 mai 2027**
-  (fin de l'année : examens du 3<sup>e</sup> trimestre, 23-27 mai).
-* La 4<sup>e</sup> semaine (dim. 25 oct.) est la dernière avant les vacances d'automne : ses
+* Chaque semaine scolaire porte son **dimanche de départ** dans la répartition
+  (champ `du` de `SEMAINES`, répartition rectifiée de novembre 2026) : rentrée le
+  **dim. 4 oct. 2026** (évaluation diagnostique), reprises le **dim. 3 janv. 2027** et le
+  **dim. 4 avr. 2027**, dernière semaine du **dim. 30 mai 2027**. La semaine 4 porte le
+  dimanche 1<sup>er</sup> nov. (en vacances) : le journal le signale automatiquement.
+* Les **30 semaines tombent exactement dans le mois de la répartition**, du
+  **dim. 4 oct. 2026** (04-08 oct. : mise en place et évaluation diagnostique) au
+  **dim. 30 mai 2027** — toutes les dates restent **≤ 3 juin 2027**
+  (fin de l'année : clôture officielle le jeudi 3 juin 2027, après les compositions
+  du 3<sup>e</sup> trimestre, 23-27 mai).
+* La semaine 3 (dim. 25 oct.) est la dernière avant les vacances d'automne : ses
   séances du mardi au jeudi sont perturbées pour les classes concernées — le journal l'indique.
 
 ### Les créneaux : déduits de l'emploi du temps
@@ -343,12 +344,12 @@ Chaque classe a **4 créneaux** (3 classiques + 1 TD) extraits de l'emploi du te
 Les séances sont rangées par type (`t`) de la répartition (oral → vocabulaire → lecture /
 atelier d'écriture / évaluation → TD), chacune avec **son objectif**, son **support**
 (manuel p. X, fiche N, cahier d'activités pour les TD, audio pour la préparation orale)
-et son **évaluation** (devoir surveillé n° 1 à la sem. 7 et n° 2 à la sem. 16 ;
-devoirs T3 aux sem. 23-24 ; composition des trois trimestres aux sem. 9, 18 et 27 ;
-évaluation continue aux sem. 6 et 16 ; semaines d'examens officiels T1 / T2 / T3 aux
-sem. 9, 18 et 27, puis révisions à la sem. 26). La 4<sup>e</sup> séance est
+et son **évaluation** (devoir surveillé n° 1 à la sem. 5 (8-12 nov.), n° 2 à la sem. 17
+(14-18 févr.) et n° 3 à la sem. 25 (2-6 mai) ; compositions des trois trimestres aux
+sem. 9, 19 et 28 ; corrections et remédiations aux sem. 6, 10, 18, 20, 26 et 29 ;
+révisions générales à la sem. 27). La 4<sup>e</sup> séance est
 un **TD** chaque semaine, avec les jeux du cahier d'activités aux semaines
-1, 4, 8, 12, 15, 20 et 23.
+2, 4, 8, 14, 16, 22 et 26.
 
 ### Sorties
 
@@ -374,13 +375,13 @@ Les exercices ne sont **pas inventés** : ce sont les blocs « Travaux dirigés 
 
 | Séance | Sem. | Bloc du cahier | Activités reprises |
 |---|---|---|---|
-| Le Rallye des formules magiques | 1 | Les compléments circonstanciels (séq. 01) | Act. 01 · 02 · 03 |
+| Le Rallye des formules magiques | 2 | Les compléments circonstanciels (séq. 01) | Act. 01 · 02 · 03 |
 | Le Domino des Connecteurs | 4 | La sorcière et ses trois enfants (séq. 02) | Act. 01 · 02 · 03 |
 | L'Énigme du Mot de Clôture | 8 | Ali Baba et le haricot magique (séq. 03) | Act. 01 · 02 · 03 |
-| Le Tabou des traits de caractère | 12 | Le Lion et le Renard (projet 2) | Act. 02 · 03 · 04 |
-| Le Puzzle des Onomatopées | 15 | La bande dessinée (projet 2) | Act. 01 · 02 · 03 |
-| Le Portrait-Robot du Héros | 20 | La légende de Lalla Kh'didja (projet 3) | Act. 01 · 02 · 03 |
-| Le Grand Baccalauréat des Métamorphoses | 23 | Aïn Bent El Soltane de Mascara (projet 3) | Act. 01 · 02 · 03 |
+| Le Tabou des traits de caractère | 14 | Le Lion et le Renard (projet 2) | Act. 02 · 03 · 04 |
+| Le Puzzle des Onomatopées | 16 | La bande dessinée (projet 2) | Act. 01 · 02 · 03 |
+| Le Portrait-Robot du Héros | 22 | La légende de Lalla Kh'didja (projet 3) | Act. 01 · 02 · 03 |
+| Le Grand Baccalauréat des Métamorphoses | 26 | Aïn Bent El Soltane de Mascara (projet 3) | Act. 01 · 02 · 03 |
 
 ### Le mécanisme (un seul, volontairement simple)
 
@@ -428,10 +429,11 @@ grenadier…) :
 * **Glitters** : ~54 paillettes dorées (`.poussiere`, `@keyframes tombe`) générées par
   `glitters(n)` + un rideau léger (`rideauGlitter`) sur les séances ; coupés par
   `prefers-reduced-motion`.
-* **Console d'orbes** : un seul composant (`.console`) réutilisé sur les 112 séances.
+* **Console d'orbes** : un seul composant (`.console`) réutilisé sur les 103 séances.
 * **Lecteur PDF intégré** : `<iframe>` vers le PDF + barre d'outils maison ; aucun `window.open`,
   donc aucun blocage de pop-up.
-* **Cahier journal** : `js/journal.js` (IIFE + `'use strict'`), aucune donnée de date en dur,
+* **Cahier journal** : `js/journal.js` (IIFE + `'use strict'`), les dates viennent du champ `du`
+  de `SEMAINES`,
   export `.doc` en HTML Word avec BOM UTF-8.
 * **Curseur bâton magique** : `cursor: url("data:image/svg+xml;…")` (variante « pointe
   chaude » sur les éléments cliquables).
@@ -449,7 +451,8 @@ META      // niveau, année, volume, chemins des PDF
 THEMES    // les 3 royaumes (nom, devise, description, décor, couleurs)
 SEQUENCES // les 7 séquences (projet, durée, officiel[], devoirs[], pages, fiches…)
 TYPES     // les 13 types de séance (icône, famille)
-SEMAINES  // les 28 semaines : n (0 = rentrée), mois, theme, seq, seances[], vacances, note
+SEMAINES  // les 30 semaines : n (0 = rentrée), mois, theme, seq, du (dimanche de la semaine),
+          // seances[], vacances (entrées à part), note
 CALENDRIER_OFFICIEL // les 3 trimestres : devoirs + examens avec périodes et semaines
 JEUX      // les 7 TD : titre, séquence, semaine, thème, bloc du cahier, illustration
 ```
@@ -499,7 +502,7 @@ Format d'une activité :
 
 ```js
 rallye: {
-  titre: 'Le Rallye des formules magiques', seq: 1, td: 1, theme: 1,
+  titre: 'Le Rallye des formules magiques', seq: 1, td: 2, theme: 1,
   cahier: 'td1',     // clé du bloc dans CAHIER
   illu: 'lacet'      // dessin de la carte
 }
@@ -537,14 +540,15 @@ Séance type :
 * Orbe fiche → `fiches-2am.pdf?p=3#page=3&view=Fit` ; orbe jeu → « Le Rallye des formules
   magiques », 3 activités, 3 choix.
 * Les 12 rubriques du guide et les **4 devoirs officiels** de chaque séquence (7 × 4 = 28).
-* Cahier journal : 27 semaines datées du 4 oct. 2026 au 23 mai 2027 (max. = jeu. 27 mai 2027,
-  **≤ 27 mai 2027**), 108 séances toutes datées et horairées, 4 créneaux par classe conformes
+* Cahier journal : 29 semaines datées du 4 oct. 2026 au 3 juin 2027 (max. = jeu. 3 juin 2027,
+  **≤ 3 juin 2027**), 103 séances toutes datées et horairées, 4 créneaux par classe conformes
   à l'emploi du temps, séances coupées par une vacance signalées ; export `.doc` testé
   (BOM UTF-8, `@page A4 landscape`, `Cahier-journal-2AM5-2026-2027.doc`, téléchargement
   `blob:` robuste avec retrait différé).
 * Calendrier officiel `#/calendrier` : les 3 trimestres affichent leurs périodes de devoirs et
-  d'examens (T1 : 6-10 déc. · T2 : 2-8 mars · T3 : 23-27 mai) avec leurs semaines associées ;
-  les notes des semaines 9, 18, 23, 26 et 27 correspondent aux échéances officielles.
+  de compositions (T1 : devoirs 8-12 nov. + compositions 6-10 déc. · T2 : devoirs 14-18 févr.
+  + compositions 2-8 mars · T3 : devoirs 2-6 mai + compositions 23-27 mai) avec leurs semaines
+  associées ; les notes des semaines 9, 19 et 28 correspondent aux compositions officielles.
 * Les 15 routes balayées sans erreur console ; Lighthouse **Accessibilité 1,00 ·
   Bonnes pratiques 1,00 · SEO 1,00**, zéro audit en échec.
 

@@ -14,7 +14,7 @@ const META = {
   code: '2AM',
   annee: '2026-2027',
   volume: '4 séances par semaine — 3 séances classiques + 1 séance de TD',
-  finCours: '27 mai 2027',
+  finCours: '3 juin 2027',
   docs: {
     fiches: 'assets/fiches-2am.pdf',
     manuel: 'assets/manuel-2am.pdf'
@@ -431,535 +431,508 @@ const TYPES = {
    jeu  : identifiant du jeu lexical interactif (TD de semaine A)
    -------------------------------------------------------------------- */
 const SEMAINES = [
-  /* ============ RENTRÉE — ÉVALUATION ET REMÉDIATION ============ */
   {
-    n: 0, mois: 'Septembre', theme: null, seq: 0,
-    note: 'Évaluation et remédiation',
+    n: 0, mois: 'Octobre', theme: null, seq: 0, du: '4 oct. 2026',
+    note: 'Évaluation diagnostique',
     seances: [
-      { t: 'eval', obj: 'Évaluation diagnostique de rentrée : situer les acquis des élèves.',
-        f: null, m: null, mp: null, mt: 'Évaluation de la rentrée scolaire',
-        capable: ['Se situer à l’oral comme à l’écrit.'] },
-      { t: 'rev', obj: 'Remédiation : consolider les fondamentaux (lecture, vocabulaire, orthographe).',
-        f: null, m: null, mp: null, mt: 'Consolidation des acquis',
-        capable: ['Reprendre les points non maîtrisés.'] },
-      { t: 'eval', obj: 'Évaluation diagnostique : expression orale — se présenter et raconter brièvement.',
-        f: null, m: null, mp: null, mt: 'Prise de parole en continu',
-        capable: ['S’exprimer oralement avec aisance.'] },
-      { t: 'td', obj: 'Accueil de la classe : consignes de travail, manuel, organisation de l’année.',
-        libre: false, f: null, m: null, mp: null, mt: 'Organisation de l’année scolaire',
-        capable: ['Comprendre l’organisation de l’année scolaire.'] }
-    ]
-  },
-
-  /* ============ THÈME 1 — LE MERVEILLEUX ============ */
-  {
-    n: 1, mois: 'Octobre', theme: 1, seq: 1,
-    seances: [
-      { t: 'oral', obj: 'Repérer le cadre et les personnages d’un début de conte.',
-        f: { de: 3, a: 3 }, m: 10, mp: 12, mt: 'Nous écoutons pour comprendre l’histoire',
-        capable: ['Écouter et comprendre une histoire.',
-                  'Repérer le cadre et les personnages d’un début de conte.'] },
-      { t: 'comp1', obj: 'Analyser le texte « Le Petit Chaperon Rouge ».',
-        f: { de: 4, a: 4 }, m: 12, mp: 13, mt: 'Nous regardons les images — « Que ton chemin disparaisse ! »',
-        capable: ['Observer un support iconique.',
-                  'Comprendre oralement la situation initiale d’un conte.'] },
-      { t: 'voc', obj: 'Utiliser les formules d’ouverture (« Il était une fois »).',
-        f: { de: 7, a: 8 }, m: 14, mp: 16, mt: 'Les formules d’ouverture du conte',
-        capable: ['Reconnaître la formule d’ouverture d’un conte.',
-                  'Employer « Il était une fois », « Il y a longtemps », « Autrefois »…'] },
-      { t: 'td', obj: 'Le Rallye des formules magiques.', libre: false, f: { de: 3, a: 3 },
-        m: null, mp: 16, mt: 'Les formules d’ouverture du conte', jeu: 'rallye',
-        capable: ['Associer chaque formule d’ouverture à la situation initiale correspondante.'] }
+      { t: 'eval', obj: 'Évaluation diagnostique : test de positionnement global (lecture / écrit).',
+      f: null, m: null, mp: null, mt: 'Évaluation de la rentrée scolaire',
+      capable: ['Se situer à l’oral comme à l’écrit.'] },
+      { t: 'eval', obj: 'Évaluation diagnostique : vérification des prérequis syntaxiques et lexicaux.',
+      f: null, m: null, mp: null, mt: 'Prise de parole en continu',
+      capable: ['S’exprimer oralement avec aisance.'] },
+      { t: 'rev', obj: 'Remédiation ciblée et mise à niveau des outils de base.',
+      f: null, m: null, mp: null, mt: 'Consolidation des acquis',
+      capable: ['Reprendre les points non maîtrisés.'] },
+      { t: 'td', obj: 'TD 1 (Ludique) : jeu de présentation et brise-glace lexical.', libre: false, f: null, m: null, mp: null,
+      capable: ['Se présenter, écouter les autres et mémoriser du lexique.'] },
     ]
   },
   {
-    n: 2, mois: 'Octobre', theme: 1, seq: 1,
+    n: 1, mois: 'Octobre', theme: 1, seq: 1, du: '11 oct. 2026',
     seances: [
-      { t: 'gram', obj: 'Identifier et manipuler les compléments de temps et de lieu (CCT / CCL).',
-        f: { de: 9, a: 10 }, m: 17, mp: 18, mt: 'Les compléments circonstanciels',
-        capable: ['Identifier les compléments circonstanciels (CCT, CCL, CCM).',
-                  'Les employer correctement.'] },
-      { t: 'comp2', obj: 'Analyser un texte complémentaire du merveilleux.',
-        f: { de: 5, a: 6 }, m: 16, mp: 14, mt: '« Un bûcheron honnête » (Natha Caputo)',
-        capable: ['Repérer le cadre spatio-temporel.',
-                  'Émettre des hypothèses de sens avant et après lecture.'] },
-      { t: 'conj', obj: 'Conjuguer les verbes du 1er groupe à l’imparfait.',
-        f: { de: 11, a: 12 }, m: 19, mp: 20, mt: 'L’imparfait de l’indicatif',
-        capable: ['Identifier les terminaisons de l’imparfait.',
-                  'Conjuguer des verbes à l’imparfait de l’indicatif.'] },
-      { t: 'td', obj: 'Libre pour le suivi individuel et l’autonomie.', libre: true, f: null }
+      { t: 'oral', obj: 'Séance 1 : moment d’accroche + compréhension et production orales (p. 10-11).',
+      f: { de: 3, a: 3 }, m: 10, mp: 12, mt: 'Nous écoutons pour comprendre l’histoire',
+      capable: ['Écouter et comprendre une histoire.',
+      'Repérer le cadre et les personnages d’un début de conte.'] },
+      { t: 'comp1', obj: 'Compréhension de l’écrit 01 : découverte du texte support (p. 12-13).',
+      f: { de: 4, a: 4 }, m: 12, mp: 13, mt: 'Nous regardons les images — « Que ton chemin disparaisse ! »',
+      capable: ['Observer un support iconique.',
+      'Comprendre oralement la situation initiale d’un conte.'] },
+      { t: 'voc', obj: 'Vocabulaire : les formules d’ouverture du conte (p. 14).',
+      f: { de: 7, a: 8 }, m: 14, mp: 16, mt: 'Les formules d’ouverture du conte',
+      capable: ['Reconnaître la formule d’ouverture d’un conte.',
+      'Employer « Il était une fois », « Il y a longtemps », « Autrefois »…'] },
     ]
   },
   {
-    n: 3, mois: 'Octobre', theme: 1, seq: 1,
+    n: 2, mois: 'Octobre', theme: 1, seq: 1, du: '18 oct. 2026',
     seances: [
-      { t: 'prep', obj: 'S’exercer à combiner les outils de la situation initiale.',
-        f: { de: 13, a: 14 }, m: 22, mp: 23, mt: 'Nous écrivons le début d’une histoire',
-        capable: ['Construire un début de conte.',
-                  'Repérer le début, la suite et la fin d’une histoire.'] },
-      { t: 'pe', obj: 'Rédiger de manière autonome la situation initiale d’un conte.',
-        f: { de: 15, a: 16 }, m: 24, mp: 25, mt: '« Le petit garçon et la sorcière »',
-        capable: ['Rédiger la situation initiale d’un conte de façon autonome.'],
-        criteres: ['Préciser le moment et le lieu où se déroule le conte.',
-                   'Indiquer les personnages du conte.',
-                   'Conjuguer les verbes à l’imparfait.'] },
-      { t: 'eval', obj: 'Compte-rendu de l’écrit intégré, correction collective et amélioration.',
-        f: { de: 17, a: 17 }, m: null, mp: 62, mt: '« Maintenant, je peux » — synthèse',
-        capable: ['Repérer ses erreurs.',
-                  'Corriger et améliorer sa production écrite.'] },
-      { t: 'td', obj: 'Libre pour le soutien pédagogique.', libre: true, f: null }
-    ]
-  },
-
-  /* --- Séquence 2 --- */
-  {
-    n: 4, mois: 'Octobre', theme: 1, seq: 2,
-    seances: [
-      { t: 'oral', obj: 'Repérer l’élément modificateur rompant le calme initial.',
-        f: { de: 20, a: 20 }, m: 28, mp: 28, mt: 'Nous écoutons pour comprendre l’histoire — « Cendrillon »',
-        capable: ['Écouter et comprendre une histoire.',
-                  'Repérer la suite des événements.'] },
-      { t: 'comp1', obj: 'Analyser les actions du héros dans « La vache des orphelins ».',
-        f: { de: 21, a: 21 }, m: 30, mp: 30, mt: '« Un homme malhonnête » (suite de « Un bûcheron honnête »)',
-        capable: ['Comprendre oralement un support iconique.',
-                  'Analyser les actions du héros.'] },
-      { t: 'voc', obj: 'Employer les connecteurs chronologiques de rupture (« Soudain »).',
-        f: { de: 24, a: 25 }, m: 32, mp: 32, mt: 'Les expressions qui indiquent la suite du conte',
-        capable: ['Identifier et employer le vocabulaire du merveilleux.',
-                  'Employer les connecteurs de rupture : « Tout à coup », « Soudain »…'] },
-      { t: 'td', obj: 'Le Domino des Connecteurs.', libre: false, f: null, jeu: 'domino',
-        m: 32, mp: 32, mt: 'Les expressions qui indiquent la suite du conte',
-        capable: ['Relier chaque connecteur chronologique à la péripétie correspondante.'] }
-    ]
-  },
-  { vacances: true, nom: 'Vacances d’automne', du: '27 oct. 2026', au: '2 nov. 2026', apres: 4 },
-  {
-    n: 5, mois: 'Novembre', theme: 1, seq: 2,
-    seances: [
-      { t: 'gram', obj: 'Enrichir le groupe nominal avec l’adjectif qualificatif épithète.',
-        f: { de: 26, a: 27 }, m: 35, mp: 35, mt: 'Les adjectifs qualificatifs et les compléments du nom',
-        capable: ['Identifier l’adjectif qualificatif.',
-                  'Distinguer l’épithète du complément du nom.'] },
-      { t: 'comp2', obj: 'Identifier les obstacles du héros dans un second récit.',
-        f: { de: 30, a: 31 }, m: 34, mp: 43, mt: '« Les deux sœurs et les fées » (Perrault)',
-        capable: ['Analyser un texte narratif.',
-                  'Rechercher la structure du conte.'] },
-      { t: 'conj', obj: 'Conjuguer les verbes des 1er et 2ème groupes au passé simple.',
-        f: { de: 28, a: 29 }, m: 37, mp: 37, mt: 'Le passé simple — verbes des 1er et 2e groupes',
-        capable: ['Identifier les terminaisons du passé simple.',
-                  'Conjuguer des verbes des 1er et 2e groupes au passé simple.'] },
-      { t: 'td', obj: 'Libre pour le suivi individuel.', libre: true, f: null }
+      { t: 'gram', obj: 'Grammaire : les compléments circonstanciels (CC temps / lieu / manière) (p. 16-17).',
+      f: { de: 9, a: 10 }, m: 16, mp: 18, mt: 'Les compléments circonstanciels',
+      capable: ['Identifier les compléments circonstanciels (CCT, CCL, CCM).',
+      'Les employer correctement.'] },
+      { t: 'conj', obj: 'Conjugaison : l’imparfait de l’indicatif (p. 18-19).',
+      f: { de: 11, a: 12 }, m: 18, mp: 20, mt: 'L’imparfait de l’indicatif',
+      capable: ['Identifier les terminaisons de l’imparfait.',
+      'Conjuguer des verbes à l’imparfait de l’indicatif.'] },
+      { t: 'prep', obj: 'Préparation à l’écrit : structurer le début d’un récit (p. 20).',
+      f: { de: 13, a: 14 }, m: 20, mp: 23, mt: 'Nous écrivons le début d’une histoire',
+      capable: ['Construire un début de conte.',
+      'Repérer le début, la suite et la fin d’une histoire.'] },
+      { t: 'td', obj: 'TD 2 (Vocabulaire) : mots croisés sur les formules d’ouverture et personnages du conte.', libre: false, f: { de: 3, a: 3 },
+      m: null, mp: 16, mt: 'Les formules d’ouverture du conte', jeu: 'rallye',
+      capable: ['Associer chaque formule d’ouverture à la situation initiale correspondante.'] },
     ]
   },
   {
-    n: 6, mois: 'Novembre', theme: 1, seq: 2,
+    n: 3, mois: 'Octobre', theme: 1, seq: 1, du: '25 oct. 2026',
     seances: [
-      { t: 'prep', obj: 'Structurer logiquement une suite d’actions successives.',
-        f: null, m: 40, mp: 42, mt: 'Le début de l’histoire — repérage des étapes',
-        capable: ['Repérer le début, la suite et la fin d’une histoire.'] },
-      { t: 'pe', obj: 'Rédiger la suite d’événements (péripéties) d’un récit.',
-        f: { de: 32, a: 33 }, m: 42, mp: 43, mt: '« Les deux sœurs et les fées » — production de la suite',
-        capable: ['Produire la suite d’une histoire.'],
-        criteres: ['Respecter la chronologie des événements.',
-                   'Employer les connecteurs de rupture.'] },
-      { t: 'eval', obj: 'Compte-rendu des péripéties et régulation des temps du récit.',
-        f: { de: 34, a: 34 }, m: null, mp: 62, mt: '« Maintenant, je peux » — synthèse',
-        capable: ['Repérer ses erreurs.',
-                  'Corriger et améliorer sa production écrite.'] },
-      { t: 'td', obj: 'Libre.', libre: true, f: null }
-    ],
-    note: 'ÉVALUATION CONTINUE'
-  },
-  {
-    n: 7, mois: 'Novembre', theme: 1, seq: 2,
-    seances: [
-      { t: 'rev', obj: 'Consolider les structures et outils grammaticaux vus.',
-        f: { de: 18, a: 18 }, m: null, mp: 63, mt: '« Mon test » — Projet 1',
-        capable: ['Repérer les points de langue vus durant la séquence.'] },
-      { t: 'ds', obj: 'Évaluer l’analyse textuelle et la langue sur table.',
-        f: null, m: null, mp: 63, mt: '« Mon test » — Projet 1',
-        evaluation: 'Devoir surveillé n° 1' },
-      { t: 'eval', obj: 'Analyser le barème officiel et remédier aux erreurs.',
-        f: null, m: null, mp: 64, mt: 'Cahier de textes — complements circonstanciels' },
-      { t: 'td', obj: 'Atelier de lecture plaisir (Contes du patrimoine algérien).', libre: false,
-        f: null, m: 144, mp: 145, mt: 'Textes-supports — « La vache et le chien »',
-        capable: ['Écouter et savourer un conte du patrimoine algérien.'] }
+      { t: 'pe', obj: 'Production écrite : rédiger la situation initiale d’un conte (p. 21).',
+      f: { de: 15, a: 16 }, m: 21, mp: 25, mt: '« Le petit garçon et la sorcière »',
+      capable: ['Rédiger la situation initiale d’un conte de façon autonome.'],
+      criteres: ['Préciser le moment et le lieu où se déroule le conte.',
+      'Indiquer les personnages du conte.',
+      'Conjuguer les verbes à l’imparfait.'] },
+      { t: 'comp2', obj: 'Compréhension de l’écrit 02 : lecture autonome d’intégration des acquis (p. 15).',
+      f: { de: 5, a: 6 }, m: 15, mp: 14, mt: '« Un bûcheron honnête » (Natha Caputo)',
+      capable: ['Repérer le cadre spatio-temporel.',
+      'Émettre des hypothèses de sens avant et après lecture.'] },
     ]
   },
-
-  /* --- Séquence 3 --- */
+  { vacances: true, nom: 'Vacances d’automne', du: '27 oct. 2026', au: '2 nov. 2026', apres: 3 },
   {
-    n: 8, mois: 'Novembre', theme: 1, seq: 3,
+    n: 4, mois: 'Novembre', theme: 1, seq: 2, du: '1 nov. 2026',
     seances: [
-      { t: 'oral', obj: 'Comprendre le dénouement et le retour à la stabilité.',
-        f: { de: 37, a: 37 }, m: 46, mp: 46, mt: 'Nous écoutons pour comprendre l’histoire — « Le chaudron magique »',
-        capable: ['Écouter et comprendre une histoire.',
-                  'Repérer la fin des événements.'] },
-      { t: 'comp1', obj: 'Analyser la fin du récit « Le vilain petit canard ».',
-        f: { de: 38, a: 38 }, m: 48, mp: 47, mt: 'Nous regardons les images — la situation finale',
-        capable: ['Comprendre oralement un support iconique.',
-                  'Découvrir la situation finale du conte.'] },
-      { t: 'voc', obj: 'Identifier et employer les formules de clôture (« C’est ainsi que »).',
-        f: null, m: 50, mp: 50, mt: 'Les expressions qui indiquent la fin d’une histoire',
-        capable: ['Reconnaître la formule de clôture d’un conte.',
-                  'Employer « C’est ainsi que », « Depuis ce jour »…'] },
-      { t: 'td', obj: 'L’Énigme du Mot de Clôture.', libre: false, f: null, jeu: 'enigme',
-        m: 50, mp: 50, mt: 'Les expressions qui indiquent la fin d’une histoire',
-        capable: ['Reconnaître la formule de clôture à partir d’indices.'] }
+      { t: 'eval', obj: 'Séance 9 (Séq. 01) : compte-rendu de la production écrite + auto-évaluation et remédiation.',
+      f: { de: 17, a: 17 }, m: null, mp: 62, mt: '« Maintenant, je peux » — synthèse',
+      capable: ['Repérer ses erreurs.',
+      'Corriger et améliorer sa production écrite.'] },
+      { t: 'oral', obj: 'Séance 1 (Séq. 02) : moment d’accroche + compréhension et production orales (p. 28-29).',
+      f: { de: 20, a: 20 }, m: 28, mp: 28, mt: 'Nous écoutons pour comprendre l’histoire — « Cendrillon »',
+      capable: ['Écouter et comprendre une histoire.',
+      'Repérer la suite des événements.'] },
+      { t: 'comp1', obj: 'Compréhension de l’écrit 01 : repérer les actions du récit (p. 30-31).',
+      f: { de: 21, a: 21 }, m: 30, mp: 30, mt: '« Un homme malhonnête » (suite de « Un bûcheron honnête »)',
+      capable: ['Comprendre oralement un support iconique.',
+      'Analyser les actions du héros.'] },
+      { t: 'td', obj: 'TD 3 (Vocabulaire) : chasse à l’intrus et devinettes autour du lexique du merveilleux.', libre: false, f: null, jeu: 'domino',
+      m: 32, mp: 32, mt: 'Les expressions qui indiquent la suite du conte',
+      capable: ['Relier chaque connecteur chronologique à la péripétie correspondante.'] },
     ]
   },
   {
-    n: 9, mois: 'Décembre', theme: 1, seq: 3,
+    n: 5, mois: 'Novembre', theme: 1, seq: 2, du: '8 nov. 2026',
+    seances: [
+      { t: 'voc', obj: 'Vocabulaire : le vocabulaire du merveilleux et indicateurs chronologiques (p. 32-33).',
+      f: { de: 24, a: 25 }, m: 32, mp: 32, mt: 'Les expressions qui indiquent la suite du conte',
+      capable: ['Identifier et employer le vocabulaire du merveilleux.',
+      'Employer les connecteurs de rupture : « Tout à coup », « Soudain »…'] },
+      { t: 'gram', obj: 'Grammaire : les qualifiants (adjectif qualificatif et complément du nom) (p. 34-35).',
+      f: { de: 26, a: 27 }, m: 34, mp: 35, mt: 'Les adjectifs qualificatifs et les compléments du nom',
+      capable: ['Identifier l’adjectif qualificatif.',
+      'Distinguer l’épithète du complément du nom.'] },
+      { t: 'ds', obj: 'Devoir surveillé n° 1 (période réglementaire des devoirs du 1er trimestre).',
+      f: null, m: null, mp: 63, mt: '« Mon test » — Projet 1',
+      evaluation: 'Devoir surveillé n° 1' },
+    ]
+  },
+  {
+    n: 6, mois: 'Novembre', theme: 1, seq: 2, du: '15 nov. 2026',
+    seances: [
+      { t: 'eval', obj: 'Compte-rendu du devoir surveillé n° 1 et remédiation ciblée.',
+      f: null, m: null, mp: 64, mt: 'Cahier de textes — complements circonstanciels' },
+      { t: 'conj', obj: 'Conjugaison : le passé simple (1er et 2ème groupes + verbes usuels) (p. 36-37).',
+      f: { de: 28, a: 29 }, m: 36, mp: 37, mt: 'Le passé simple — verbes des 1er et 2e groupes',
+      capable: ['Identifier les terminaisons du passé simple.',
+      'Conjuguer des verbes des 1er et 2e groupes au passé simple.'] },
+      { t: 'prep', obj: 'Préparation à l’écrit : élaboration de la suite des événements (p. 38).',
+      f: null, m: 38, mp: 42, mt: 'Le début de l’histoire — repérage des étapes',
+      capable: ['Repérer le début, la suite et la fin d’une histoire.'] },
+      { t: 'td', obj: 'TD 4 (Orthographe) : défi d’équipe sur les accords des adjectifs qualificatifs.', libre: false, f: null, m: null, mp: null,
+      capable: ['Accorder correctement l’adjectif qualificatif avec le nom.'] },
+    ]
+  },
+  {
+    n: 7, mois: 'Novembre', theme: 1, seq: 2, du: '22 nov. 2026',
+    seances: [
+      { t: 'pe', obj: 'Production écrite : rédiger les péripéties en cohérence avec le début (p. 39).',
+      f: { de: 32, a: 33 }, m: 39, mp: 43, mt: '« Les deux sœurs et les fées » — production de la suite',
+      capable: ['Produire la suite d’une histoire.'],
+      criteres: ['Respecter la chronologie des événements.',
+      'Employer les connecteurs de rupture.'] },
+      { t: 'comp2', obj: 'Compréhension de l’écrit 02 : analyse et mobilisation des ressources textuelles (p. 40).',
+      f: { de: 30, a: 31 }, m: 40, mp: 43, mt: '« Les deux sœurs et les fées » (Perrault)',
+      capable: ['Analyser un texte narratif.',
+      'Rechercher la structure du conte.'] },
+      { t: 'eval', obj: 'Séance 9 : compte-rendu de la production écrite + séance d’auto-correction guidée.',
+      f: { de: 34, a: 34 }, m: null, mp: 62, mt: '« Maintenant, je peux » — synthèse',
+      capable: ['Repérer ses erreurs.',
+      'Corriger et améliorer sa production écrite.'] },
+    ]
+  },
+  {
+    n: 8, mois: 'Novembre', theme: 1, seq: 3, du: '29 nov. 2026',
+    seances: [
+      { t: 'oral', obj: 'Séance 1 : moment d’accroche + compréhension et production orales (p. 46-47).',
+      f: { de: 37, a: 37 }, m: 46, mp: 46, mt: 'Nous écoutons pour comprendre l’histoire — « Le chaudron magique »',
+      capable: ['Écouter et comprendre une histoire.',
+      'Repérer la fin des événements.'] },
+      { t: 'comp1', obj: 'Compréhension de l’écrit 01 : le dénouement du conte (p. 48-49).',
+      f: { de: 38, a: 38 }, m: 48, mp: 47, mt: 'Nous regardons les images — la situation finale',
+      capable: ['Comprendre oralement un support iconique.',
+      'Découvrir la situation finale du conte.'] },
+      { t: 'voc', obj: 'Vocabulaire : les formules de clôture du conte (p. 50) + révisions T1.',
+      f: null, m: 50, mp: 50, mt: 'Les expressions qui indiquent la fin d’une histoire',
+      capable: ['Reconnaître la formule de clôture d’un conte.',
+      'Employer « C’est ainsi que », « Depuis ce jour »…'] },
+      { t: 'td', obj: 'TD 5 (Vocabulaire) : méli-mélo ludique des formules de clôture et substituts.', libre: false, f: null, jeu: 'enigme',
+      m: 50, mp: 50, mt: 'Les expressions qui indiquent la fin d’une histoire',
+      capable: ['Reconnaître la formule de clôture à partir d’indices.'] },
+    ]
+  },
+  {
+    n: 9, mois: 'Décembre', theme: 1, seq: 3, du: '6 déc. 2026',
+    note: 'COMPOSITIONS T1 - 06-10 déc.',
     seances: [
       { t: 'compo', obj: 'Composition du trimestre 1.', f: null, m: null,
-        mp: 63, mt: '« Mon test » — Projet 1', evaluation: 'Composition — Trimestre 1' },
+      mp: 63, mt: '« Mon test » — Projet 1', evaluation: 'Composition — Trimestre 1' },
       { t: 'compo', obj: 'Composition du trimestre 1.', f: null, m: null,
-        mp: 63, mt: '« Mon test » — Projet 1', evaluation: 'Composition — Trimestre 1' },
+      mp: 63, mt: '« Mon test » — Projet 1', evaluation: 'Composition — Trimestre 1' },
       { t: 'compo', obj: 'Composition du trimestre 1.', f: null, m: null,
-        mp: 63, mt: '« Mon test » — Projet 1', evaluation: 'Composition — Trimestre 1' },
-      { t: 'td', obj: 'Régulation des fiches et bilans du trimestre.', libre: false, f: null,
-        m: null, mp: 63, mt: '« Mon test » — corrigé',
-        capable: ['Faire le bilan du premier trimestre.'] }
-    ],
-    note: 'EXAMENS T1 — 6-10 déc.'
+      mp: 63, mt: '« Mon test » — Projet 1', evaluation: 'Composition — Trimestre 1' },
+    ]
   },
   {
-    n: 10, mois: 'Décembre', theme: 1, seq: 3,
+    n: 10, mois: 'Décembre', theme: 1, seq: 3, du: '13 déc. 2026',
     seances: [
-      { t: 'gram', obj: 'Manipuler l’expansion nominale : le complément du nom.',
-        f: { de: 41, a: 42 }, m: 52, mp: 51, mt: 'Les substituts lexicaux et grammaticaux',
-        capable: ['Identifier les substituts lexicaux et grammaticaux.',
-                  'Employer les pronoms pour éviter la répétition.'] },
-      { t: 'comp2', obj: 'Interpréter la morale et la situation finale d’un second texte.',
-        f: { de: 39, a: 40 }, m: 51, mp: 48, mt: '« Loundja, la fille du roi » (Contes d’Algérie)',
-        capable: ['Découvrir la situation finale du conte.',
-                  'Repérer la morale.'] },
-      { t: 'conj', obj: 'Maîtriser l’alternance imparfait / passé simple dans un paragraphe.',
-        f: { de: 43, a: 44 }, m: 54, mp: 55, mt: 'Le passé simple — 3e groupe + « être » et « avoir »',
-        capable: ['Identifier le passé simple des verbes du 3e groupe.',
-                  'Conjuguer avec les auxiliaires « être » et « avoir ».'] },
-      { t: 'td', obj: 'Libre pour le suivi individuel.', libre: true, f: null }
+      { t: 'eval', obj: 'Correction collective de la composition du 1er trimestre + remise des copies.', libre: false, f: null,
+      m: null, mp: 63, mt: '« Mon test » — corrigé',
+      capable: ['Faire le bilan du premier trimestre.'] },
+      { t: 'eval', obj: 'Séance de régulation et remédiation individualisée post-composition.',
+      f: null, m: null, mp: 64, mt: 'Cahier de textes — complements circonstanciels' },
+      { t: 'bilan', obj: 'Bilan ludique du thème 1 - départ en vacances d’hiver (jeudi 17 déc. au soir).',
+      f: null, m: null, mp: 60, mt: '« Mon projet » — Jouer l’histoire le jour de la fête' },
+      { t: 'td', obj: 'TD 6 (Orthographe) : dictée négociée et quiz sur les homophones grammaticaux.', libre: false, f: null, m: null, mp: null,
+      capable: ['Écrire sans erreur les homophones grammaticaux fréquents.'] },
     ]
   },
   { vacances: true, nom: 'Vacances d’hiver', du: '17 déc. 2026', au: '3 janv. 2027', apres: 10 },
-
   {
-    n: 11, mois: 'Janvier', theme: 1, seq: 3,
+    n: 11, mois: 'Janvier', theme: 1, seq: 3, du: '3 janv. 2027',
     seances: [
-      { t: 'prep', obj: 'Clôturer un récit à partir d’éléments donnés.',
-        f: { de: 45, a: 46 }, m: 56, mp: 57, mt: '« Hansel et Gretel » — entraînement à l’écriture de la fin',
-        capable: ['Repérer le début et la fin d’une histoire.',
-                  'Choisir une fin parmi quatre propositions.'] },
-      { t: 'pe', obj: 'Rédiger de manière cohérente la situation finale complète.',
-        f: { de: 47, a: 48 }, m: 58, mp: 59, mt: 'Nous écrivons la fin de l’histoire',
-        capable: ['Produire la fin d’un conte.'],
-        criteres: ['Employer la formule de clôture.',
-                   'Respecter la cohérence du récit.'] },
-      { t: 'eval', obj: 'Évaluation du dénouement et validation des critères de réussite.',
-        f: { de: 49, a: 49 }, m: null, mp: 62, mt: '« Maintenant, je peux » — reconnaître la fin d’un conte' },
-      { t: 'td', obj: 'Libre.', libre: true, f: null }
-    ]
-  },
-
-  /* ============ THÈME 2 — LA FABLE & LA BD ============ */
-  {
-    n: 12, mois: 'Janvier', theme: 2, seq: 4,
-    seances: [
-      { t: 'oral', obj: 'Distinguer la narration et le dialogue chez les animaux.',
-        f: { de: 52, a: 52 }, m: 68, mp: 66, mt: 'Nous écoutons pour comprendre la fable',
-        capable: ['Découvrir la fable.',
-                  'Repérer la morale.'] },
-      { t: 'comp1', obj: 'Dégager la structure et la morale de « Le Corbeau et le Renard ».',
-        f: { de: 53, a: 53 }, m: 70, mp: 68, mt: '« Les serins et le chardonneret » (Claris de Florian)',
-        capable: ['Comprendre oralement un support iconique.',
-                  'Repérer les personnages de la fable.'] },
-      { t: 'voc', obj: 'Acquérir le lexique des traits de caractère (vices et vertus).',
-        f: { de: 60, a: 61 }, m: 71, mp: 76, mt: 'Les adverbes de manière — « Le renard et la poule »',
-        capable: ['Identifier et employer les adverbes de manière.',
-                  'Distinguer adjectif de caractère et adverbe correspondant.'] },
-      { t: 'td', obj: 'Le Tabou des traits de caractère.', libre: false, f: null, jeu: 'tabou',
-        m: 71, mp: 76, mt: 'Les adverbes de manière',
-        capable: ['Nommer un trait de caractère sans employer le mot interdit.'] }
+      { t: 'gram', obj: 'Grammaire : les substituts lexicaux et grammaticaux (p. 52-53).',
+      f: { de: 41, a: 42 }, m: 52, mp: 51, mt: 'Les substituts lexicaux et grammaticaux',
+      capable: ['Identifier les substituts lexicaux et grammaticaux.',
+      'Employer les pronoms pour éviter la répétition.'] },
+      { t: 'conj', obj: 'Conjugaison : le passé simple des verbes irréguliers du 3ème groupe (p. 54-55).',
+      f: { de: 43, a: 44 }, m: 54, mp: 55, mt: 'Le passé simple — 3e groupe + « être » et « avoir »',
+      capable: ['Identifier le passé simple des verbes du 3e groupe.',
+      'Conjuguer avec les auxiliaires « être » et « avoir ».'] },
+      { t: 'prep', obj: 'Préparation à l’écrit : planifier le dénouement logique du récit (p. 56).',
+      f: { de: 45, a: 46 }, m: 56, mp: 57, mt: '« Hansel et Gretel » — entraînement à l’écriture de la fin',
+      capable: ['Repérer le début et la fin d’une histoire.',
+      'Choisir une fin parmi quatre propositions.'] },
     ]
   },
   {
-    n: 13, mois: 'Janvier', theme: 2, seq: 4,
+    n: 12, mois: 'Janvier', theme: 1, seq: 3, du: '10 janv. 2027',
     seances: [
-      { t: 'gram', obj: 'Choisir et insérer judicieusement les verbes de parole.',
-        f: { de: 56, a: 57 }, m: 74, mp: 70, mt: 'Les verbes introducteurs de paroles et la ponctuation du dialogue',
-        capable: ['Identifier et employer les verbes introducteurs de paroles.',
-                  'Placer les guillemets, les tirets et les deux points.'] },
-      { t: 'comp2', obj: 'Analyser les interactions verbales dans une autre fable.',
-        f: { de: 54, a: 55 }, m: 73, mp: 68, mt: '« Les serins et le chardonneret » — exploitation',
-        capable: ['Repérer la morale.',
-                  'Identifier la ponctuation du dialogue.'] },
-      { t: 'conj', obj: 'Maîtriser le présent de narration et de vérité générale.',
-        f: { de: 58, a: 59 }, m: 75, mp: 72, mt: 'Le présent de narration, d’énonciation et de vérité générale',
-        capable: ['Identifier les terminaisons du présent de l’indicatif.',
-                  'Distinguer les trois valeurs du présent.'] },
-      { t: 'td', obj: 'Libre pour le suivi individuel.', libre: true, f: null }
+      { t: 'pe', obj: 'Production écrite : rédiger la situation finale d’un conte (p. 57).',
+      f: { de: 47, a: 48 }, m: 57, mp: 59, mt: 'Nous écrivons la fin de l’histoire',
+      capable: ['Produire la fin d’un conte.'],
+      criteres: ['Employer la formule de clôture.',
+      'Respecter la cohérence du récit.'] },
+      { t: 'comp2', obj: 'Compréhension de l’écrit 02 : lecture de réinvestissement autonome (p. 51).',
+      f: { de: 39, a: 40 }, m: 51, mp: 48, mt: '« Loundja, la fille du roi » (Contes d’Algérie)',
+      capable: ['Découvrir la situation finale du conte.',
+      'Repérer la morale.'] },
+      { t: 'eval', obj: 'Séance 9 : compte-rendu de la production écrite + amélioration collective du texte.',
+      f: { de: 49, a: 49 }, m: null, mp: 62, mt: '« Maintenant, je peux » — reconnaître la fin d’un conte' },
+      { t: 'td', obj: 'TD 7 (Vocabulaire) : jeu de l’oie des verbes introducteurs de paroles.', libre: false, f: null, m: null, mp: null,
+      capable: ['Employer les verbes introducteurs de paroles dans un dialogue.'] },
     ]
   },
   {
-    n: 14, mois: 'Janvier', theme: 2, seq: 4,
+    n: 13, mois: 'Janvier', theme: 2, seq: 4, du: '17 janv. 2027',
     seances: [
-      { t: 'prep', obj: 'Ponctuer correctement un dialogue (tirets, guillemets).',
-        f: { de: 62, a: 62 }, m: 78, mp: 78, mt: 'Nous nous entraînons à écrire un dialogue à partir d’une fable',
-        capable: ['Reprendre un texte pour y placer les paroles des personnages.'] },
-      { t: 'pe', obj: 'Insérer un dialogue moralisateur entre deux animaux.',
-        f: { de: 64, a: 65 }, m: 80, mp: 79, mt: 'Nous écrivons un dialogue à partir d’une fable',
-        capable: ['Produire un dialogue entre des personnages de fable.'],
-        criteres: ['Employer les verbes introducteurs de paroles.',
-                   'Respecter la ponctuation du dialogue.'] },
-      { t: 'eval', obj: 'Compte-rendu de la fable et vérification des codes du dialogue.',
-        f: { de: 66, a: 66 }, m: null, mp: 82, mt: '« Maintenant, je peux » — utiliser le dialogue' },
-      { t: 'td', obj: 'Libre.', libre: true, f: null }
-    ]
-  },
-
-  /* --- Séquence 5 --- */
-  {
-    n: 15, mois: 'Février', theme: 2, seq: 5,
-    seances: [
-      { t: 'oral', obj: 'Imaginer les répliques d’une planche à partir des expressions.',
-        f: { de: 69, a: 69 }, m: 88, mp: 84, mt: 'Nous écoutons pour comprendre l’histoire — « Le laboureur et ses enfants »',
-        capable: ['Identifier la morale.',
-                  'Repérer la structure d’une bande dessinée.'] },
-      { t: 'comp1', obj: 'Identifier les bulles, vignettes et onomatopées d’une BD.',
-        f: { de: 70, a: 70 }, m: 90, mp: 85, mt: 'Nous regardons les images — la bande dessinée',
-        capable: ['Comprendre oralement un support iconique.'] },
-      { t: 'voc', obj: 'Employer les onomatopées adaptées à une situation.',
-        f: { de: 73, a: 74 }, m: 92, mp: 88, mt: 'Le lexique de la bande dessinée',
-        capable: ['Identifier et employer le lexique de la BD.',
-                  'Distinguer vignette, bulle, cartouche et onomatopée.'] },
-      { t: 'td', obj: 'Le Puzzle des Onomatopées.', libre: false, f: null, jeu: 'puzzle',
-        m: 92, mp: 88, mt: 'Le lexique de la bande dessinée',
-        capable: ['Associer chaque onomatopée à la situation qui convient.'] }
+      { t: 'oral', obj: 'Séance 1 : moment d’accroche + compréhension et production orales (p. 66-67).',
+      f: { de: 52, a: 52 }, m: 66, mp: 66, mt: 'Nous écoutons pour comprendre la fable',
+      capable: ['Découvrir la fable.',
+      'Repérer la morale.'] },
+      { t: 'comp1', obj: 'Compréhension de l’écrit 01 : identifier la structure et la morale (p. 68-69).',
+      f: { de: 53, a: 53 }, m: 68, mp: 68, mt: '« Les serins et le chardonneret » (Claris de Florian)',
+      capable: ['Comprendre oralement un support iconique.',
+      'Repérer les personnages de la fable.'] },
+      { t: 'gram', obj: 'Vocabulaire : les verbes introducteurs de paroles (p. 70).',
+      f: { de: 56, a: 57 }, m: 70, mp: 70, mt: 'Les verbes introducteurs de paroles et la ponctuation du dialogue',
+      capable: ['Identifier et employer les verbes introducteurs de paroles.',
+      'Placer les guillemets, les tirets et les deux points.'] },
     ]
   },
   {
-    n: 16, mois: 'Février', theme: 2, seq: 5,
+    n: 14, mois: 'Janvier', theme: 2, seq: 4, du: '24 janv. 2027',
     seances: [
-      { t: 'rev', obj: 'Consolider le style direct et la ponctuation narrative.',
-        f: { de: 67, a: 67 }, m: null, mp: 93, mt: '« Je coche la bonne case » — révisions',
-        evaluation: 'Évaluation continue' },
-      { t: 'ds', obj: 'Évaluer les acquis linguistiques et textuels du T2.',
-        f: null, m: null, mp: 102, mt: '« Mon test » — Projet 2',
-        evaluation: 'Devoir surveillé n° 2' },
-      { t: 'eval', obj: 'Expliciter le barème et analyser les faiblesses.',
-        f: null, m: null, mp: 102, mt: '« Mon test » — corrigé' },
-      { t: 'td', obj: 'Lecture expressive de légendes du terroir.', libre: false, f: null,
-        m: 146, mp: 147, mt: 'Textes-supports — « La légende de Sidi M’Hammed El Ghrab »',
-        capable: ['Lire expressivement une légende du terroir.'] }
+      { t: 'gram', obj: 'Grammaire : caractéristiques typographiques et discursives du dialogue (p. 72-73).',
+      f: { de: 56, a: 57 }, m: 72, mp: 70, mt: 'Les verbes introducteurs de paroles et la ponctuation du dialogue',
+      capable: ['Identifier et employer les verbes introducteurs de paroles.',
+      'Placer les guillemets, les tirets et les deux points.'] },
+      { t: 'conj', obj: 'Conjugaison : le présent de l’indicatif (narration et vérité générale) (p. 74-75).',
+      f: { de: 58, a: 59 }, m: 74, mp: 72, mt: 'Le présent de narration, d’énonciation et de vérité générale',
+      capable: ['Identifier les terminaisons du présent de l’indicatif.',
+      'Distinguer les trois valeurs du présent.'] },
+      { t: 'prep', obj: 'Préparation à l’écrit : introduire des répliques dans un récit (p. 76).',
+      f: { de: 62, a: 62 }, m: 76, mp: 78, mt: 'Nous nous entraînons à écrire un dialogue à partir d’une fable',
+      capable: ['Reprendre un texte pour y placer les paroles des personnages.'] },
+      { t: 'td', obj: 'TD 8 (Orthographe) : concours express de formation des adverbes en « -ment ».', libre: false, f: null, jeu: 'tabou',
+      m: 71, mp: 76, mt: 'Les adverbes de manière',
+      capable: ['Nommer un trait de caractère sans employer le mot interdit.'] },
     ]
   },
   {
-    n: 17, mois: 'Février', theme: 2, seq: 5,
+    n: 15, mois: 'Février', theme: 2, seq: 4, du: '31 janv. 2027',
     seances: [
-      { t: 'gram', obj: 'Transposer des paroles rapportées du style direct aux bulles.',
-        f: { de: 75, a: 76 }, m: 95, mp: 91, mt: 'Les types de phrases — « Le lion et le renard »',
-        capable: ['Identifier les différents types de phrases.',
-                  'Transposer le style direct vers les bulles.'] },
-      { t: 'comp2', obj: 'Lire et analyser l’agencement graphique d’une planche de BD.',
-        f: { de: 79, a: 80 }, m: 94, mp: 86, mt: '« La guenon, le singe et la noix »',
-        capable: ['Analyser l’agencement graphique d’une planche.',
-                  'Repérer vignettes, bulles et cartouches.'] },
-      { t: 'conj', obj: 'Conjuguer les verbes au futur simple de l’indicatif.',
-        f: { de: 77, a: 78 }, m: 98, mp: 95, mt: 'Le futur simple — « La tortue et les deux canards »',
-        capable: ['Identifier les terminaisons du futur simple.',
-                  'Conjuguer des verbes au futur simple.'] },
-      { t: 'td', obj: 'Libre pour le suivi individuel.', libre: true, f: null }
+      { t: 'pe', obj: 'Production écrite : transposer une fable sous une autre forme narrative (p. 77).',
+      f: { de: 64, a: 65 }, m: 77, mp: 79, mt: 'Nous écrivons un dialogue à partir d’une fable',
+      capable: ['Produire un dialogue entre des personnages de fable.'],
+      criteres: ['Employer les verbes introducteurs de paroles.',
+      'Respecter la ponctuation du dialogue.'] },
+      { t: 'comp2', obj: 'Compréhension de l’écrit 02 : lecture d’analyse fine du dialogue (p. 71).',
+      f: { de: 54, a: 55 }, m: 71, mp: 68, mt: '« Les serins et le chardonneret » — exploitation',
+      capable: ['Repérer la morale.',
+      'Identifier la ponctuation du dialogue.'] },
+      { t: 'eval', obj: 'Séance 9 : compte-rendu de la production écrite + correction et réécriture individuelle.',
+      f: { de: 66, a: 66 }, m: null, mp: 82, mt: '« Maintenant, je peux » — utiliser le dialogue' },
     ]
   },
   {
-    n: 18, mois: 'Mars', theme: 2, seq: 5,
+    n: 16, mois: 'Février', theme: 2, seq: 5, du: '7 fév. 2027',
+    seances: [
+      { t: 'oral', obj: 'Séance 1 : moment d’accroche + compréhension et production orales (p. 84-85).',
+      f: { de: 69, a: 69 }, m: 84, mp: 84, mt: 'Nous écoutons pour comprendre l’histoire — « Le laboureur et ses enfants »',
+      capable: ['Identifier la morale.',
+      'Repérer la structure d’une bande dessinée.'] },
+      { t: 'comp1', obj: 'Compréhension de l’écrit 01 : lire et décoder le langage de la BD (p. 86-87).',
+      f: { de: 70, a: 70 }, m: 86, mp: 85, mt: 'Nous regardons les images — la bande dessinée',
+      capable: ['Comprendre oralement un support iconique.'] },
+      { t: 'voc', obj: 'Vocabulaire : les termes spécifiques de la BD (vignette, bulle, cartouche) (p. 88).',
+      f: { de: 73, a: 74 }, m: 88, mp: 88, mt: 'Le lexique de la bande dessinée',
+      capable: ['Identifier et employer le lexique de la BD.',
+      'Distinguer vignette, bulle, cartouche et onomatopée.'] },
+      { t: 'td', obj: 'TD 9 (Vocabulaire) : jeu d’association ludique sur les onomatopées et bulles de BD.', libre: false, f: null, jeu: 'puzzle',
+      m: 92, mp: 88, mt: 'Le lexique de la bande dessinée',
+      capable: ['Associer chaque onomatopée à la situation qui convient.'] },
+    ]
+  },
+  {
+    n: 17, mois: 'Février', theme: 2, seq: 5, du: '14 fév. 2027',
+    seances: [
+      { t: 'gram', obj: 'Grammaire : employer les différents types de phrases dans les bulles (p. 90-91).',
+      f: { de: 75, a: 76 }, m: 90, mp: 91, mt: 'Les types de phrases — « Le lion et le renard »',
+      capable: ['Identifier les différents types de phrases.',
+      'Transposer le style direct vers les bulles.'] },
+      { t: 'ds', obj: 'Devoir surveillé n° 2 (période réglementaire des devoirs du 2ème trimestre).',
+      f: null, m: null, mp: 102, mt: '« Mon test » — Projet 2',
+      evaluation: 'Devoir surveillé n° 2' },
+      { t: 'conj', obj: 'Conjugaison : le futur simple de l’indicatif (p. 92-93).',
+      f: { de: 77, a: 78 }, m: 92, mp: 95, mt: 'Le futur simple — « La tortue et les deux canards »',
+      capable: ['Identifier les terminaisons du futur simple.',
+      'Conjuguer des verbes au futur simple.'] },
+    ]
+  },
+  {
+    n: 18, mois: 'Février', theme: 2, seq: 5, du: '21 fév. 2027',
+    seances: [
+      { t: 'eval', obj: 'Compte-rendu du devoir surveillé n° 2 + remédiation ciblée.',
+      f: null, m: null, mp: 102, mt: '« Mon test » — corrigé' },
+      { t: 'prep', obj: 'Préparation à l’écrit : raccorder les planches et scénariser l’histoire (p. 94).',
+      f: null, m: 94, mp: 97, mt: 'Nous nous entraînons à animer une fable',
+      capable: ['Associer chaque nom à son image dans la BD.'] },
+      { t: 'pe', obj: 'Production écrite : produire les cartouches et les bulles d’une BD (p. 95).',
+      f: { de: 81, a: 82 }, m: 95, mp: 99, mt: 'Réaliser une planche de bande dessinée à partir d’une fable',
+      capable: ['Réaliser une planche de bande dessinée.'],
+      criteres: ['Choisir un titre et une morale.',
+      'Placer les paroles du dialogue dans les bulles.'] },
+      { t: 'td', obj: 'TD 10 (Orthographe) : chasse aux fautes dans des planches de BD truquées.', libre: false, f: null, m: null, mp: null,
+      capable: ['Repérer et corriger les erreurs d’orthographe dans une planche de BD.'] },
+    ]
+  },
+  {
+    n: 19, mois: 'Mars', theme: 2, seq: 5, du: '7 mars 2027',
+    note: 'COMPOSITIONS T2 - 02-08 mars',
     seances: [
       { t: 'compo', obj: 'Composition du trimestre 2.', f: null, m: null,
-        mp: 100, mt: '« Le maître et le scorpion » — Fables d’Orient', evaluation: 'Composition — Trimestre 2' },
+      mp: 100, mt: '« Le maître et le scorpion » — Fables d’Orient', evaluation: 'Composition — Trimestre 2' },
       { t: 'compo', obj: 'Composition du trimestre 2.', f: null, m: null,
-        mp: 100, mt: '« Le maître et le scorpion » — Fables d’Orient', evaluation: 'Composition — Trimestre 2' },
+      mp: 100, mt: '« Le maître et le scorpion » — Fables d’Orient', evaluation: 'Composition — Trimestre 2' },
       { t: 'compo', obj: 'Composition du trimestre 2.', f: null, m: null,
-        mp: 100, mt: '« Le maître et le scorpion » — Fables d’Orient', evaluation: 'Composition — Trimestre 2' },
-      { t: 'td', obj: 'Bilans intermédiaires et livrets du second trimestre.', libre: false, f: null,
-        m: null, mp: 102, mt: '« Mon test » — bilan',
-        capable: ['Faire le bilan du deuxième trimestre.'] }
-    ],
-    note: 'EXAMENS T2 — 2-8 mars'
-  },
-  { vacances: true, nom: 'Vacances de printemps', du: '18 mars 2027', au: '4 avr. 2027', apres: 18 },
-
-  {
-    n: 19, mois: 'Mars', theme: 2, seq: 5,
-    seances: [
-      { t: 'prep', obj: 'Faire correspondre les types d’énoncés aux bulles adaptées.',
-        f: null, m: 102, mp: 97, mt: 'Nous nous entraînons à animer une fable',
-        capable: ['Associer chaque nom à son image dans la BD.'] },
-      { t: 'pe', obj: 'Transformer un court récit en mini-planche de BD.',
-        f: { de: 81, a: 82 }, m: 104, mp: 99, mt: 'Réaliser une planche de bande dessinée à partir d’une fable',
-        capable: ['Réaliser une planche de bande dessinée.'],
-        criteres: ['Choisir un titre et une morale.',
-                   'Placer les paroles du dialogue dans les bulles.'] },
-      { t: 'eval', obj: 'Compte-rendu et analyse de la cohérence texte/image.',
-        f: { de: 83, a: 83 }, m: null, mp: 101, mt: '« Maintenant, je peux » — réaliser une BD' },
-      { t: 'td', obj: 'Libre.', libre: true, f: null }
-    ]
-  },
-
-  /* ============ THÈME 3 — LA LÉGENDE ============ */
-  {
-    n: 20, mois: 'Mars', theme: 3, seq: 6,
-    seances: [
-      { t: 'oral', obj: 'Distinguer les faits réels de l’amplification fantastique.',
-        f: { de: 85, a: 85 }, m: 110, mp: 104, mt: 'Nous écoutons pour comprendre la légende',
-        capable: ['Découvrir la légende.',
-                  'Distinguer le réel du fantastique.'] },
-      { t: 'comp1', obj: 'Repérer les qualités héroïques dans « La geste de l’Émir Abdelkader ».',
-        f: { de: 86, a: 86 }, m: 112, mp: 105, mt: 'Nous regardons les images — la légende',
-        capable: ['Comprendre oralement un support iconique.'] },
-      { t: 'voc', obj: 'Utiliser le lexique mélioratif de l’héroïsme et du courage.',
-        f: { de: 89, a: 90 }, m: 114, mp: 108, mt: 'La nominalisation à base verbale — les suffixes',
-        capable: ['Identifier le procédé de la nominalisation.',
-                  'Employer le lexique de l’héroïsme et du courage.'] },
-      { t: 'td', obj: 'Le Portrait-Robot du Héros.', libre: false, f: null, jeu: 'portrait',
-        m: 114, mp: 108, mt: 'La nominalisation à base verbale',
-        capable: ['Définir un héros légendaire à partir d’indices.'] }
+      mp: 100, mt: '« Le maître et le scorpion » — Fables d’Orient', evaluation: 'Composition — Trimestre 2' },
     ]
   },
   {
-    n: 21, mois: 'Avril', theme: 3, seq: 6,
+    n: 20, mois: 'Mars', theme: 2, seq: 5, du: '14 mars 2027',
     seances: [
-      { t: 'gram', obj: 'Éviter la répétition avec les propositions relatives par « qui / que ».',
-        f: { de: 91, a: 92 }, m: 117, mp: 111, mt: 'Le pronom relatif « qui »',
-        capable: ['Identifier la relative par « qui ».',
-                  'L’employer pour éviter la répétition.'] },
-      { t: 'comp2', obj: 'Identifier les actions mémorables d’un autre héros local.',
-        f: { de: 87, a: 88 }, m: 116, mp: 106, mt: '« Yennayer et la vieille bergère »',
-        capable: ['Analyser et comprendre un texte narratif.',
-                  'Repérer les qualités du héros.'] },
-      { t: 'conj', obj: 'Maîtriser le passé composé et l’accord de ses participes.',
-        f: { de: 93, a: 94 }, m: 119, mp: 114, mt: 'Le passé composé',
-        capable: ['Identifier le passé composé.',
-                  'Conjuguer des verbes au passé composé.'] },
-      { t: 'td', obj: 'Libre pour le suivi individuel.', libre: true, f: null }
+      { t: 'eval', obj: 'Correction collective de la composition du 2ème trimestre + remise des copies.', libre: false, f: null,
+      m: null, mp: 102, mt: '« Mon test » — bilan',
+      capable: ['Faire le bilan du deuxième trimestre.'] },
+      { t: 'comp2', obj: 'Séance 8 (Séq. 05) : compréhension de l’écrit 02 : interprétation d’une BD (p. 89).',
+      f: { de: 79, a: 80 }, m: 89, mp: 86, mt: '« La guenon, le singe et la noix »',
+      capable: ['Analyser l’agencement graphique d’une planche.',
+      'Repérer vignettes, bulles et cartouches.'] },
+      { t: 'eval', obj: 'Séance 9 (Séq. 05) : compte-rendu de la production écrite - vacances de printemps (jeudi 18 mars au soir).',
+      f: { de: 83, a: 83 }, m: null, mp: 101, mt: '« Maintenant, je peux » — réaliser une BD' },
+      { t: 'td', obj: 'TD 11 (Vocabulaire) : domino ludique des suffixes de nominalisation (-tion, -age, -ement).', libre: false, f: null, m: null, mp: null,
+      capable: ['Former des noms avec les suffixes -tion, -age, -ement.'] },
+    ]
+  },
+  { vacances: true, nom: 'Vacances de printemps', du: '18 mars 2027', au: '4 avr. 2027', apres: 20 },
+  {
+    n: 21, mois: 'Avril', theme: 3, seq: 6, du: '4 avr. 2027',
+    seances: [
+      { t: 'oral', obj: 'Séance 1 : moment d’accroche + compréhension et production orales (p. 106-107).',
+      f: { de: 85, a: 85 }, m: 106, mp: 104, mt: 'Nous écoutons pour comprendre la légende',
+      capable: ['Découvrir la légende.',
+      'Distinguer le réel du fantastique.'] },
+      { t: 'comp1', obj: 'Compréhension de l’écrit 01 : récit d’un héros légendaire (p. 108-109).',
+      f: { de: 86, a: 86 }, m: 108, mp: 105, mt: 'Nous regardons les images — la légende',
+      capable: ['Comprendre oralement un support iconique.'] },
+      { t: 'voc', obj: 'Vocabulaire : la nominalisation (suffixes : -tion, -age, -ement) (p. 110).',
+      f: { de: 89, a: 90 }, m: 110, mp: 108, mt: 'La nominalisation à base verbale — les suffixes',
+      capable: ['Identifier le procédé de la nominalisation.',
+      'Employer le lexique de l’héroïsme et du courage.'] },
     ]
   },
   {
-    n: 22, mois: 'Avril', theme: 3, seq: 6,
+    n: 22, mois: 'Avril', theme: 3, seq: 6, du: '11 avr. 2027',
     seances: [
-      { t: 'prep', obj: 'Organiser les étapes chronologiques de la vie d’un héros.',
-        f: null, m: 122, mp: 135, mt: 'Reconstituer l’ordre chronologique des actions',
-        capable: ['Reconstituer l’ordre chronologique des actions.'] },
-      { t: 'pe', obj: 'Écrire le récit légendaire glorifiant un personnage historique.',
-        f: { de: 95, a: 96 }, m: 124, mp: 120, mt: 'Nous écrivons une histoire légendaire — « La légende d’Icare »',
-        capable: ['Écrire une histoire légendaire.'],
-        criteres: ['Rapporter les faits avec exactitude.',
-                   'Employer le lexique de la légende.'] },
-      { t: 'eval', obj: 'Compte-rendu écrit et correction des temps du passé.',
-        f: { de: 97, a: 97 }, m: null, mp: 123, mt: '« Maintenant, je peux » — rapporter une légende' },
-      { t: 'td', obj: 'Libre.', libre: true, f: null }
-    ]
-  },
-
-  /* --- Séquence 7 --- */
-  {
-    n: 23, mois: 'Avril', theme: 3, seq: 7,
-    seances: [
-      { t: 'oral', obj: 'Découvrir l’explication mythologique du nom d’un site naturel.',
-        f: { de: 100, a: 100 }, m: 132, mp: 125, mt: 'Nous écoutons pour comprendre la légende — le Sahara',
-        capable: ['Écouter et comprendre une légende de lieu.'] },
-      { t: 'comp1', obj: 'Repérer la métamorphose dans « La légende de la source de Tikjda ».',
-        f: { de: 101, a: 103 }, m: 134, mp: 127, mt: '« Aïn Bent El Soltane de Mascara »',
-        capable: ['Découvrir la situation initiale de la légende.',
-                  'Repérer le lieu et les faits légendaires.'] },
-      { t: 'voc', obj: 'Utiliser le lexique de la transformation physique.',
-        f: { de: 104, a: 105 }, m: 136, mp: 129, mt: 'Les indicateurs de lieu',
-        capable: ['Identifier et employer les indicateurs de lieu.',
-                  'Décrire une transformation physique.'] },
-      { t: 'td', obj: 'Le Grand Baccalauréat des Métamorphoses.', libre: false, f: null, jeu: 'metamorphose',
-        m: 136, mp: 129, mt: 'Les indicateurs de lieu',
-        capable: ['Associer chaque transformation à son verbe.'] }
-    ],
-    note: 'DEVOIRS T3 — fin avril / début mai'
-  },
-  {
-    n: 24, mois: 'Mai', theme: 3, seq: 7,
-    seances: [
-      { t: 'gram', obj: 'Grammaire & conjugaison : la cause et la conséquence ; le présent de vérité générale.',
-        f: { de: 106, a: 107 }, m: 139, mp: 131, mt: 'Le pronom relatif « où »',
-        capable: ['Identifier la PSR par « où ».',
-                  'L’employer pour éviter la répétition.'] },
-      { t: 'pe', obj: 'Rédiger une légende expliquant l’origine d’un lieu régional.',
-        f: { de: 108, a: 109 }, m: 146, mp: 140, mt: 'Rapporter par écrit une histoire légendaire',
-        capable: ['Écrire la légende d’un lieu et d’un fait légendaire.'],
-        criteres: ['Présenter le lieu avec précision.',
-                   'Employer les indicateurs de lieu.'] },
-      { t: 'eval', obj: 'Compte-rendu final de l’écrit et synthèse annuelle.',
-        f: null, m: null, mp: 143, mt: '« Mon test » — Projet 3' },
-      { t: 'td', obj: 'Libre.', libre: true, f: null }
+      { t: 'gram', obj: 'Grammaire : la proposition subordonnée relative introduite par « qui » (p. 112-113).',
+      f: { de: 91, a: 92 }, m: 112, mp: 111, mt: 'Le pronom relatif « qui »',
+      capable: ['Identifier la relative par « qui ».',
+      'L’employer pour éviter la répétition.'] },
+      { t: 'conj', obj: 'Conjugaison : le passé composé de l’indicatif (être et avoir) (p. 114-115).',
+      f: { de: 93, a: 94 }, m: 114, mp: 114, mt: 'Le passé composé',
+      capable: ['Identifier le passé composé.',
+      'Conjuguer des verbes au passé composé.'] },
+      { t: 'prep', obj: 'Préparation à l’écrit : caractériser un portrait extraordinaire (p. 116).',
+      f: null, m: 116, mp: 135, mt: 'Reconstituer l’ordre chronologique des actions',
+      capable: ['Reconstituer l’ordre chronologique des actions.'] },
+      { t: 'td', obj: 'TD 12 (Orthographe) : loto orthographique de l’accord du participe passé.', libre: false, f: null, jeu: 'portrait',
+      m: 114, mp: 108, mt: 'La nominalisation à base verbale',
+      capable: ['Définir un héros légendaire à partir d’indices.'] },
     ]
   },
   {
-    n: 25, mois: 'Mai', theme: 3, seq: 7,
+    n: 23, mois: 'Avril', theme: 3, seq: 6, du: '18 avr. 2027',
     seances: [
-      { t: 'rev', obj: 'Préparation finale pour le passage de niveau.',
-        f: null, m: null, mp: 144, mt: 'Cahier de textes — nom du verbe et suffixe utilisé',
-        evaluation: 'Révisions finales' },
-      { t: 'bilan', obj: 'Conseils d’orientation pour la 3AM et point sur les examens (23-27 mai).',
-        f: null, m: null, mp: 60, mt: '« Mon projet » — Jouer l’histoire le jour de la fête' },
-      { t: 'eval', obj: 'Compte-rendu général de l’année et remédiation ciblée.',
-        f: null, m: null, mp: 62, mt: '« Maintenant, je peux » — bilan des acquis' },
-      { t: 'td', obj: 'Remise des prix littéraires — clôture des cours.', libre: false, f: null,
-        m: null, mp: 60, mt: '« Mon projet » — Jouer l’histoire',
-        capable: ['Clôturer l’année en célébrant les travaux littéraires.'] }
+      { t: 'pe', obj: 'Production écrite : décrire un personnage légendaire et ses exploits (p. 117).',
+      f: { de: 95, a: 96 }, m: 117, mp: 120, mt: 'Nous écrivons une histoire légendaire — « La légende d’Icare »',
+      capable: ['Écrire une histoire légendaire.'],
+      criteres: ['Rapporter les faits avec exactitude.',
+      'Employer le lexique de la légende.'] },
+      { t: 'comp2', obj: 'Compréhension de l’écrit 02 : lecture analytique d’un texte d’intégration (p. 111).',
+      f: { de: 87, a: 88 }, m: 111, mp: 106, mt: '« Yennayer et la vieille bergère »',
+      capable: ['Analyser et comprendre un texte narratif.',
+      'Repérer les qualités du héros.'] },
+      { t: 'eval', obj: 'Séance 9 : compte-rendu de la production écrite + accord du participe passé.',
+      f: { de: 97, a: 97 }, m: null, mp: 123, mt: '« Maintenant, je peux » — rapporter une légende' },
     ]
   },
   {
-    n: 26, mois: 'Mai', theme: 3, seq: 7,
+    n: 24, mois: 'Avril', theme: 3, seq: 7, du: '25 avr. 2027',
     seances: [
-      { t: 'rev', obj: 'Révisions générales : comment classer un texte selon son genre (conte, fable, légende).',
-        f: null, m: null, mp: 144, mt: '« Mon test » — Projet 3' },
-      { t: 'eval', obj: 'Soutien et remédiation ciblée avant les examens du 3e trimestre.',
-        f: null, m: null, mp: 143, mt: '« Mon test » — corrigé' },
-      { t: 'oral', obj: 'Préparation orale pour l’examen : lecture expressive et expression.',
-        f: null, m: null, mp: 141, mt: 'Nous récitons — la lecture à haute voix' },
-      { t: 'td', obj: 'Libre pour le soutien pédagogique.', libre: true, f: null }
-    ],
-    note: 'RÉVISIONS — PRÉPARATION AUX EXAMENS'
+      { t: 'oral', obj: 'Séance 1 : moment d’accroche + compréhension et production orales (p. 126-127).',
+      f: { de: 100, a: 100 }, m: 126, mp: 125, mt: 'Nous écoutons pour comprendre la légende — le Sahara',
+      capable: ['Écouter et comprendre une légende de lieu.'] },
+      { t: 'comp1', obj: 'Compréhension de l’écrit 01 : découvrir le récit lié à un lieu (p. 128-129).',
+      f: { de: 101, a: 103 }, m: 128, mp: 127, mt: '« Aïn Bent El Soltane de Mascara »',
+      capable: ['Découvrir la situation initiale de la légende.',
+      'Repérer le lieu et les faits légendaires.'] },
+      { t: 'voc', obj: 'Vocabulaire : le vocabulaire de la description de lieu et indicateurs (p. 130).',
+      f: { de: 104, a: 105 }, m: 130, mp: 129, mt: 'Les indicateurs de lieu',
+      capable: ['Identifier et employer les indicateurs de lieu.',
+      'Décrire une transformation physique.'] },
+      { t: 'td', obj: 'TD 13 (Vocabulaire) : mots cachés et charades sur les lieux mythiques et paysages.', libre: false, f: null, m: null, mp: null,
+      capable: ['Retrouver le lexique des lieux mythiques à partir d’indices.'] },
+    ]
   },
   {
-    n: 27, mois: 'Mai', theme: 3, seq: 7,
+    n: 25, mois: 'Mai', theme: 3, seq: 7, du: '2 mai 2027',
+    seances: [
+      { t: 'gram', obj: 'Grammaire : la proposition subordonnée relative introduite par « où » (p. 132-133).',
+      f: { de: 106, a: 107 }, m: 132, mp: 131, mt: 'Le pronom relatif « où »',
+      capable: ['Identifier la PSR par « où ».',
+      'L’employer pour éviter la répétition.'] },
+      { t: 'ds', obj: 'Devoir surveillé n° 3 (période réglementaire des devoirs du 3ème trimestre).',
+      f: null, m: null, mp: null, mt: null,
+      evaluation: 'Devoir surveillé n° 3' },
+      { t: 'conj', obj: 'Conjugaison : révision approfondie du passé composé et temps du récit (p. 134).',
+      f: { de: 93, a: 94 }, m: 134, mp: 114, mt: 'Le passé composé',
+      capable: ['Identifier le passé composé.',
+      'Conjuguer des verbes au passé composé.'] },
+    ]
+  },
+  {
+    n: 26, mois: 'Mai', theme: 3, seq: 7, du: '9 mai 2027',
+    seances: [
+      { t: 'eval', obj: 'Compte-rendu du devoir surveillé n° 3 + remédiation ciblée.',
+      f: null, m: null, mp: 62, mt: '« Maintenant, je peux » — bilan des acquis' },
+      { t: 'prep', obj: 'Préparation à l’écrit : organiser la description d’un lieu mythique (p. 136).',
+      f: null, m: 136, mp: 135, mt: 'Reconstituer l’ordre chronologique des actions',
+      capable: ['Reconstituer l’ordre chronologique des actions.'] },
+      { t: 'pe', obj: 'Production écrite : décrire un lieu légendaire (p. 137).',
+      f: { de: 108, a: 109 }, m: 137, mp: 140, mt: 'Rapporter par écrit une histoire légendaire',
+      capable: ['Écrire la légende d’un lieu et d’un fait légendaire.'],
+      criteres: ['Présenter le lieu avec précision.',
+      'Employer les indicateurs de lieu.'] },
+      { t: 'td', obj: 'TD 14 (Orthographe) : rallye orthographique récapitulatif de fin d’année.', libre: false, f: null, jeu: 'metamorphose',
+      m: 136, mp: 129, mt: 'Les indicateurs de lieu',
+      capable: ['Associer chaque transformation à son verbe.'] },
+    ]
+  },
+  {
+    n: 27, mois: 'Mai', theme: 3, seq: 7, du: '16 mai 2027',
+    seances: [
+      { t: 'comp2', obj: 'Compréhension de l’écrit 02 : lecture documentaire d’intégration (p. 131).', f: null, m: 131, mp: null,
+      capable: ['Identifier les informations explicites d’un texte documentaire.', 'Les mettre en relation avec la légende étudiée.'] },
+      { t: 'eval', obj: 'Séance 9 : compte-rendu de la production écrite + amélioration collective.',
+      f: null, m: null, mp: 143, mt: '« Mon test » — Projet 3' },
+      { t: 'rev', obj: 'Révisions générales : synthèse sur le conte, la fable et la légende.',
+      f: null, m: null, mp: 144, mt: '« Mon test » — Projet 3' },
+    ]
+  },
+  {
+    n: 28, mois: 'Mai', theme: 3, seq: 7, du: '23 mai 2027',
+    note: 'COMPOSITIONS T3 - 23-27 mai',
     seances: [
       { t: 'compo', obj: 'Composition du trimestre 3.', f: null, m: null,
-        mp: 140, mt: 'Rapporter par écrit une histoire légendaire', evaluation: 'Composition — Trimestre 3' },
+      mp: 140, mt: 'Rapporter par écrit une histoire légendaire', evaluation: 'Composition — Trimestre 3' },
       { t: 'compo', obj: 'Composition du trimestre 3.', f: null, m: null,
-        mp: 140, mt: 'Rapporter par écrit une histoire légendaire', evaluation: 'Composition — Trimestre 3' },
+      mp: 140, mt: 'Rapporter par écrit une histoire légendaire', evaluation: 'Composition — Trimestre 3' },
       { t: 'compo', obj: 'Composition du trimestre 3.', f: null, m: null,
-        mp: 140, mt: 'Rapporter par écrit une histoire légendaire', evaluation: 'Composition — Trimestre 3' },
-      { t: 'td', obj: 'Régulation et bilans des examens — fin de l’année scolaire (27 mai 2027).',
-        libre: false, f: null, m: null, mp: 140, mt: '« Mon test » — Projet 3',
-        capable: ['Clôturer l’année scolaire sur le bilan des examens.'] }
-    ],
-    note: 'EXAMENS T3 — 23-27 mai'
-  }
+      mp: 140, mt: 'Rapporter par écrit une histoire légendaire', evaluation: 'Composition — Trimestre 3' },
+    ]
+  },
+  {
+    n: 29, mois: 'Mai', theme: 3, seq: 7, du: '30 mai 2027',
+    seances: [
+      { t: 'eval', obj: 'Correction collective de la composition du 3ème trimestre + remise des copies.',
+      f: null, m: null, mp: 62, mt: '« Maintenant, je peux » — bilan des acquis' },
+      { t: 'bilan', obj: 'Préparation aux examens de rattrapage et conseils méthodologiques.',
+      f: null, m: null, mp: 60, mt: '« Mon projet » — Jouer l’histoire le jour de la fête' },
+      { t: 'bilan', obj: 'Clôture officielle de l’année pédagogique avant les vacances d’été.', libre: false, f: null,
+      m: null, mp: 60, mt: '« Mon projet » — Jouer l’histoire',
+      capable: ['Clôturer l’année en célébrant les travaux littéraires.'] },
+    ]
+  },
 ];
 
-/* ------------------------------------------------------------------ OFFICIEL
-   Calendrier officiel des devoirs et des examens du CEM — année 2026-2027.
-   Les « semaines » renvoient aux numéros de la répartition (SEMAINES), et les
-   périodes aux dates officielles du calendrier scolaire.
-
-     · Premier trimestre  (🍂) : devoirs fin oct. → mi-nov., examens 6-10 déc.
-     · Deuxième trimestre (❄️) : devoirs courant février, examens 2-8 mars.
-     · Troisième trimestre (☀️) : devoirs fin avr. → début mai,
-       examens (1AM-2AM-3AM) du 23 au 27 mai — 4AM/BEM blanc : 9-11 mai.
-   -------------------------------------------------------------------- */
 const CALENDRIER_OFFICIEL = [
   {
     trimestre: 1, emoji: '🍂', nom: 'Premier trimestre',
     devoirs: {
       libelle: 'Devoirs',
-      periode: 'Fin octobre à mi-novembre 2026',
-      semaines: [5, 6, 7]
+      periode: 'Du 8 au 12 novembre 2026',
+      semaines: [5]
     },
     examens: {
       libelle: 'Examens',
@@ -971,67 +944,58 @@ const CALENDRIER_OFFICIEL = [
     trimestre: 2, emoji: '❄️', nom: 'Deuxième trimestre',
     devoirs: {
       libelle: 'Devoirs',
-      periode: 'Courant février 2027',
-      semaines: [15, 16, 17]
+      periode: 'Du 14 au 18 février 2027',
+      semaines: [17]
     },
     examens: {
       libelle: 'Examens',
       periode: 'Les 2, 3, 4, 7 et 8 mars 2027',
-      semaines: [18, 19]
+      semaines: [19]
     }
   },
   {
     trimestre: 3, emoji: '☀️', nom: 'Troisième trimestre — 1AM · 2AM · 3AM',
     devoirs: {
       libelle: 'Devoirs',
-      periode: 'Fin avril à début mai 2027',
-      semaines: [23, 24]
+      periode: 'Du 2 au 6 mai 2027',
+      semaines: [25]
     },
     examens: {
       libelle: 'Examens',
       periode: 'Du 23 au 27 mai 2027',
-      semaines: [27]
+      semaines: [28]
     }
   }
 ];
 
-/* ------------------------------------------------------------------ JEUX
-   Les 7 séances de TD de la répartition (semaine A).
 
-   Chacune renvoie à un bloc « Travaux dirigés » du
-   CAHIER D'ACTIVITÉS (voir js/cahier.js) : c'est le cahier de l'enseignant
-   qui fait foi — le site ne fait que le mettre en scène.
-
-     · `cahier` → clé du bloc dans CAHIER (3 activités cliquables)
-     · `illu`   → dessin de la carte
-   -------------------------------------------------------------------- */
 const JEUX = {
   rallye: {
-    titre: 'Le Rallye des formules magiques', seq: 1, td: 1, theme: 1,
+    titre: 'Le Rallye des formules magiques', seq: 1, td: 2, theme: 1,
     cahier: 'td1', illu: 'lacet'
   },
   domino: {
-    titre: 'Le Domino des Connecteurs', seq: 2, td: 4, theme: 1,
+    titre: 'Le Domino des Connecteurs', seq: 2, td: 3, theme: 1,
     cahier: 'td2', illu: 'sorciere'
   },
   enigme: {
-    titre: 'L’Énigme du Mot de Clôture', seq: 3, td: 8, theme: 1,
+    titre: 'L’Énigme du Mot de Clôture', seq: 3, td: 5, theme: 1,
     cahier: 'td3', illu: 'alibaba'
   },
   tabou: {
-    titre: 'Le Tabou des traits de caractère', seq: 4, td: 12, theme: 2,
+    titre: 'Le Tabou des traits de caractère', seq: 4, td: 8, theme: 2,
     cahier: 'td4', illu: 'lion'
   },
   puzzle: {
-    titre: 'Le Puzzle des Onomatopées', seq: 5, td: 15, theme: 2,
+    titre: 'Le Puzzle des Onomatopées', seq: 5, td: 9, theme: 2,
     cahier: 'td5', illu: 'bd'
   },
   portrait: {
-    titre: 'Le Portrait-Robot du Héros', seq: 6, td: 20, theme: 3,
+    titre: 'Le Portrait-Robot du Héros', seq: 6, td: 12, theme: 3,
     cahier: 'td6', illu: 'grenadier'
   },
   metamorphose: {
-    titre: 'Le Grand Baccalauréat des Métamorphoses', seq: 7, td: 23, theme: 3,
+    titre: 'Le Grand Baccalauréat des Métamorphoses', seq: 7, td: 14, theme: 3,
     cahier: 'td7', illu: 'source'
   }
 };
